@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>00_Python_Intro</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section 
+				data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+				data-background-image="assets/Python-Emblem.png" 
+				data-background-opacity="0.1" 
+				data-background-transition="zoom"
+				>
+					<h4>Programovací jazyk</h4>
+					<h1 style="color: #3870A2;">Python</h1>
+					<h5>
+						Jednoduchý. Čitelný. Praktický.
+					</h5>
+				</section>
+
+				<section 
+				data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+				data-background-image="assets/Python_Background.png"
+				data-background-opacity="0.1"
+				data-background-transition="zoom"
+				>
+					<section>
+						<h2>Co je Python?</h2>
+						<ul>
+							<li>Vysoce úrovňový programovací jazyk</li>
+							<li>Vytvořený s důrazem na čitelnost</li>
+							<li>Interpretovaný (nekompiluje se)</li>
+							<li>Open-source a zdarma</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Jak je starý Python?</h2>
+
+						<div class="r-vstack justify-center">
+							<div class="fragment fade-up" data-fragment-index="1">
+								<p>&lt;15 let</p>
+							</div>
+
+							<div class="fragment fade-up" data-fragment-index="2">
+								<p>
+									<span class="fragment highlight-green" data-fragment-index="5">
+										35 let
+									</span>
+								</p>
+							</div>
+
+							<div class="fragment fade-up" data-fragment-index="3">
+								<p>55 let</p>
+							</div>
+
+							<div class="fragment fade-up" data-fragment-index="4">
+								<p>&gt;75 let</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2>Trendy</h2>
+						<img
+							src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.statcdn.com%2FInfographic%2Fimages%2Fnormal%2F16567.jpeg&f=1&nofb=1&ipt=ee620f06c02937fd27f152d7b6c3405ee7e8e536cfb392df9c77c03ed6946d67"
+							style="
+								max-width: 100%;
+								max-height: 60vh;
+								object-fit: contain;
+								border-radius: 5%;
+								opacity: 0.8;
+							"
+						>
+					</section>
+
+					<section>
+						<h2>
+							Python je „lepidlo světa“
+						</h2>
+
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbenjamin-simmonds.gallerycdn.vsassets.io%2Fextensions%2Fbenjamin-simmonds%2Fpythoncpp-debug%2F0.3.0%2F1660482707539%2FMicrosoft.VisualStudio.Services.Icons.Default&f=1&nofb=1&ipt=1b96d09326ffb018260532c3aac0455e62e8209866cfff4a229813cb6477ba4d"
+						style="max-width: 20%;">
+
+						<ul>
+							<li>
+								Python nevznikl jako rychlý jazyk, ale jako jazyk, který spojuje ostatní věci.
+							</li>
+							<li>
+								V praxi Python často volá C/C++ kód, aniž si to uživatel uvědomuje.
+							</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h2>
+							Většina „rychlého pythonu“ není python
+						</h2>
+
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F012%2F697%2F295%2Fnon_2x%2F3d-python-programming-language-logo-free-png.png&f=1&nofb=1&ipt=1be2808e63e81b1b4d882a68b2eef251c8d2a3d205bd65e1a8da1d3a9766c5ce"
+						style="max-width: 20%;">
+
+						<ul>
+							<li>NumPy</li>
+							<li>Pandas</li>
+							<li>TensorFlow</li>
+							<li>PyTorch</li>
+						</ul>
+						<p>Všechny jsou napsané v C/C++</p>
+
+						<aside class="notes">
+							„Python je pomalý“ - ano.<br>
+							„Pythonové aplikace jsou pomalé“ - často ne.
+						</aside>
+					</section>
+
+					<section>
+						<h2>
+							Python nemá kompilátor (tak úplně)
+						</h2>
+
+						<div style="
+							flex: 1;
+							display: flex;
+							flex-direction: row;
+							gap: 12;
+						">
+							<div>
+								<ul>
+									<li>se nekompiluje do strojového kódu</li>
+									<li>ale do bytecode</li>
+									<li>který běží na Python Virtual Machine (PVM)</li>
+								</ul>
+							</div>
+
+							<div>
+								<img src="assets/Bytecode-vs-Machine-Code.jpg"
+								style="max-width: 100%;">
+							</div>
+						</div>
+
+						<p>žádný main(), linker a hlavičky</p>
+
+						<aside class="notes">
+							Proto je Python tak rychlý na vývoj, ale ne na běh.<br>
+						</aside>
+					</section>
+
+					<section>
+						<h2>
+							Python byl navržen tak, aby se četl nahlas
+						</h2>
+						<p>Python je jediný mainstream jazyk, kde:</p>
+
+						<pre data-id="code-animation">
+							<code class="python" data-trim data-line-numbers="|1|3|4|6">
+							for x in data:
+								if x > 0:
+									print(x)
+							</code>
+						</pre>
+
+						<p>… opravdu odpovídá tomu, jak bys to řekl lidsky.</p>
+						<p>žádné {}<br>žádné ;<br>odsazení má význam</p>
+
+						<aside class="notes">
+							Proto je Python tak rychlý na vývoj, ale ne na běh.<br>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-image="assets/Languages_Background.png"
+					data-background-opacity="0.05"
+					data-background-transition="zoom"
+					>
+
+						<h2>Programovací jazyky</h2>
+						<img
+							src="assets/Levels_Of_PL.png"
+							style="
+								max-width: 100%;
+								max-height: 60vh;
+								object-fit: contain;
+							"
+						>
+
+						<aside class="notes">
+							Ukazme si priklad jak udelat sumu deseti cisel pouzitim ruznych jazyku
+						</aside>
+					</section>
+
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>Interpretované programovací jazyky</h2>
+						<div>
+
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2021%2F10%2FPython-Emblem.png&f=1&nofb=1&ipt=c3ff39e40846a430b00d4a3752640cc772cee198c87b56605902ee2172f657cb"
+							style="
+								max-width: 20%;
+								"
+						>
+						</div>
+
+						<div>
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F79%2F5e%2Fbb%2F795ebb5f4a470cd7242136237f61fc53.png&f=1&nofb=1&ipt=bec165b5b71347ddc22fd91fb77d1463f8d99fc7cbc363b0f8f423a404e27cc2"
+								style="
+									max-width: 18%;
+									"
+							>
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffreepngimg.com%2Ficon%2Fdownload%2Fsocial_media%2F8172-ruby-programming-language.png&f=1&nofb=1&ipt=25cee3bcd82f7157ff7dd6319d820a81c29975fa3068dc61f545083c0a823ed8"
+								style=" max-width: 12%; "
+							>
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2023%2F02%2FJavaScript-Symbol.png&f=1&nofb=1&ipt=5296a4482122d256a7bdb3cfdd7343ded2c24fd8eeb1f3eeca2bf34d02eb595b"
+								style=" max-width: 25%; "
+							>
+						</div>
+
+						<!-- <p>Python, Java, Ruby, JavaScript</p> -->
+
+						<aside class="notes">
+							Interpretovaný jazyk je takový, kde program neběží přímo jako strojový kód, ale někdo ho za běhu „čte a vykonává“.<br>
+							Tím „někým“ je interpret (u Pythonu např. python.exe).<br>
+							Jak to funguje:<br>
+							Napíšeš kód v Pythonu. Spustíš ho příkazem py.exe main.py.<br>
+							Interpret:<br> 
+							Vezme řádek, pochopí ho, hned ho vykoná, jde na další řádek<br>
+							Výsledek:<br>
+							velmi jednoduché psaní, rychlé učení, pomalejší běh, chyby se často ukážou až za běhu<br>
+							„Python kód někdo překládá za běhu, řádek po řádku.“
+						</aside>
+					</section>
+
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>Python</h4>
+						<pre data-id="code-animation">
+							<code class="python" data-trim data-line-numbers="|1|3|4|6">
+								total = 0
+
+								for i in range(1, 11):
+									total += i
+
+								print(total)
+							</code>
+							<aside class="notes">
+								Spočítej součet čísel od 1 do 10 a vypiš výsledek.<br><br>
+								Čitelné.<br>
+								Pochopitelné i pro netechnického člověka.<br>
+								Žádné typy, žádné hlavičky, žádný boilerplate.<br>
+								Python nevznikl proto, aby byl rychlý, ale proto, aby člověk nemusel přemýšlet o věcech, které nesouvisí s problémem.
+							</aside>
+						</pre>
+						
+						<ol>
+							<li> Deklarace proměnné </li>
+							<li>Smyčka for</li>
+							<li>Přičítání v těle smyčky (total = total + i)</li>
+							<li>Výpis výsledku</li>
+						</ol>
+					</section>
+
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>Kompilované programovací jazyky</h2>
+						<div>
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ingenioempresa.com%2Fwp-content%2Fuploads%2F2022%2F09%2FC-Language.png&f=1&nofb=1&ipt=c1eb70e09b2c2e0279eac806748897e6889ad5c30f5bb591b9efcfa19203cd3a"
+							style=" max-width: 12%; "
+							>
+							
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodix.com%2Flogo%2F1137946.png&f=1&nofb=1&ipt=8e439cce1208d7279fec7ec67b199b6b299cf63393b8ceaeec54b68ff4194fdb"
+							style=" max-width: 12%; "
+							>
+						</div>
+
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodix.com%2Flogo%2F700854.png&f=1&nofb=1&ipt=ea348adf1bae765a25857261d5cb737af33a615df89f84da0ba84f092dd5af8a"
+							style=" max-width: 12%; filter: invert(1);"
+						>
+
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjuststickers.in%2Fwp-content%2Fuploads%2F2016%2F07%2Fgo-programming-language.png&f=1&nofb=1&ipt=76e82306c4a11b4c49bd9f3587b83b631fd1960e624eddbf9c7e0ae6a8ef3118"
+							style=" max-width: 12%; "
+						>
+						<!-- <p>C, C++, Rust, Go</p> -->
+
+						<aside class="notes">
+							Kompilovaný jazyk je takový, kde se celý program nejdřív přeloží do strojového kódu dopředu.<br>
+							Ten překlad dělá kompilátor (např. g++).<br>
+							Jak to funguje:<br>
+							1. Napíšeš kód v C++<br>
+							2. Spustíš kompilátor<br>
+							Kompilátor:<br>
+							Zkontroluje celý program, přeloží ho do strojového kódu 
+							-> Vznikne spustitelný program, ktery už běží přímo na procesoru<br>
+							Výsledek:<br>
+							rychlý běh, chyby se odhalí při překladu, složitější psaní, delší start (kompilace)<br><br>
+							„C++ se nejdřív přeloží, a pak už běží přímo.“
+						</aside>
+					</section>
+
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2 data-id="code-title">C++</h2>
+						<pre data-id="code-animation">
+							<code class="hljs cpp" data-trim data-line-numbers="|1|3,4,12|5|7|8|10|11|"><script type="text/template">
+								#include <iostream>
+
+								int main() 
+								{
+									int total = 0;
+
+									for (int i = 1; i <= 10; ++i)
+										total += i;
+
+									std::cout << total << std::endl;
+									return 0;
+								}
+							</script>
+							</code>
+							<aside class="notes">
+								Typy (int).<br>
+								main(){}<br>
+								Hlavičky<br>
+								Explicitní výstup
+							</aside>
+						</pre>
+						
+							<!-- <ol>
+								<li>Připojí standardní knihovnu iostream (díky ní můžeme používat std::cout)</li>
+								<li>Funkce main (vstupní bod programu)</li>
+								<li>Deklarace proměnné total</li>
+								<li>Smyčka for</li>
+								<li>Přičte aktuální hodnotu i k total (total = total + i;)</li>
+								<li>Výpis výsledku</li>
+								<li>Ukončení programu</li>
+							</ol> -->
+					</section>
+
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>Assembly</h2>
+
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.tokyotechlab.com%2FBlog%2FBlog%25202024%2FBlog%2520T7%2Fngon_ngu_lap_trinh_assembly_964e6a3fe1.webp&f=1&nofb=1&ipt=158e8c0c26fd7d756ff25de3aa4f00c032ac7b6eb8ac3c7ad250a88e5bdf20a5"
+							style="  border-radius: 5%; max-width: 80%;"
+						>
+
+						<p>Druh jazyka</p>
+
+						<aside class="notes">
+							Assembly je lidsky čitelná forma strojového kódu.<br>
+							Je to nejnižší úroveň, kam se programátor běžně dostane.<br>
+							Už nejsou: proměnné, smyčky, funkce<br>
+							Jsou jen: registry, instrukce, skoky<br>
+							Jak to funguje: <br>
+							1. Napíšeš instrukce skoro 1:1 pro procesor<br>
+							2. Assembler je přeloží na strojový kód<br>
+							3. CPU je vykoná přesně tak, jak jsi mu poručil<br>
+							Výsledek: maximální kontrola, maximální výkon, minimální komfort, extrémní náchylnost na chyby<br>
+							„V Assembly říkáš procesoru každý jednotlivý krok.“<br>
+						</aside>
+					</section>
+
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>
+							Assembly
+						</h2>
+						<pre data-id="code-animation">
+							<code class="x86asm" data-trim data-line-numbers="|1|2|4|5|6|8|9|10|11|12|14|15|16|">
+								section .text
+									global _start
+
+								_start:
+									mov rax, 0      ; total = 0
+									mov rcx, 1      ; i = 1
+
+								loop:
+									add rax, rcx    ; total += i
+									inc rcx         ; i++
+									cmp rcx, 11
+									jne loop
+
+									mov rdi, rax    ; exit code = total
+									mov rax, 60     ; sys_exit
+									syscall
+							</code>
+						</pre>
+						<aside class="notes">
+							.text section is where the actual executable code is written<br>
+							global _start <- Entry point<br>
+							syscall <- Request services from the operating system<br><br>
+
+							Řešíš registry.<br>
+							Ručně děláš smyčku.<br>
+							Řešíš ukončení programu.<br>
+							Žádný print, žádný komfort.<br><br>
+
+							V Assembly řešíš jak to počítač udělá.<br>
+							V C++ řešíš jak efektivně.<br>
+							V Pythonu řešíš co chceš udělat.<br>
+						</aside>
+						<p>
+							Každá instrukce = jeden jasný krok procesoru
+						</p>
+
+					</section>
+				</section>
+
+				<section>
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>Rychlost</h2>
+						<img src="assets/racing-car.png"
+						style="border-radius: 5%; max-width: 30%; background: transparent;" class="demo-logo"
+						>
+					</section>
+
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>Leibniz formula for pi</h2>
+						<div>
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_%28ca._1695%29.jpg/1280px-Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_%28ca._1695%29.jpg"
+							style=" max-width: 20%; border-radius: 5%;"
+							>
+						</div>
+						<p>
+							Gottfried Wilhelm Leibniz 
+						</p>
+						<p>
+							1646 - 1716
+						</p>
+
+						<div>
+							<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2a0b6b57cfd88db9c30a65ae647df063af02dfb5"
+							style=" width: 40rem; filter: invert(1);"
+							>
+						</div>
+					</section>
+
+					<section class="r-stack" data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>Benchmark rychlostí programovacích jazyků</h2>
+
+						<div style="
+							display: flex;
+							align-items: center;
+						" class="fragment">
+
+							<div style="flex: 2;" class="fragment fade-right">
+								<img src="https://camo.githubusercontent.com/146e99aa1098ed0770c94cc0ba31db2eaa34fefb5d845615af537b7846a03b40/68747470733a2f2f6e696b6c61732d686565722e6769746875622e696f2f73706565642d636f6d70617269736f6e2f686973746f72792f6c61746573742f636f6d62696e65645f726573756c74732e706e67"
+								style=" max-width: 45%; border-radius: 5%;"
+								data-preview-image
+								>
+							</div>
+								
+							<div style="
+								flex: 1;
+								display: flex;
+								flex-direction: column;
+								gap: 12;
+							">
+								<div>
+									<img src="assets/Speed_Comparison_CPP.png" style="width: 80%;" class="fragment fade-up" data-preview-image>
+									<h9 class="fragment fade-up">0.223 [s]</h9>
+								</div>
+
+								<div>
+									<img src="assets/Speed_Comparison_CPython.png" style="width: 100%;" class="fragment fade-up" data-preview-image>
+									<h9 class="fragment fade-up">86.18 [s]</h9>
+								</div>
+							</div>
+						
+						</div>
+						
+						<p>
+							1'000'000'000 iteraci (<a href="https://github.com/niklas-heer/speed-comparison" data-preview-link>Speed Comparison</a>)
+						</p>
+						
+						<!-- Blur overlay -->
+						<div class="fragment"
+							style="
+								position: absolute;
+								inset: 0;
+								backdrop-filter: blur(8px);
+								background: rgba(0,0,0,0.2);
+								z-index: 900;
+							">
+						</div>
+						
+						<h2 class="fragment"
+							style="
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -50%);
+								font-size: 8rem;
+								z-index: 1000;
+								color: darkred;
+							">
+							Python je ~386x pomalejší
+						</h2>
+						
+						<aside class="notes">
+							Shhh, these are your private notes 📝
+						</aside>
+					</section>
+
+					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
+						<h2>Proč?</h2>
+
+						<div class="r-hstack justify-center">
+							<div data-id="box1" class="fragment fade-up">
+								<img src="assets/man.png" 
+								style="width: 60%;" data-preview-image>
+							</div>
+							<div data-id="box2" class="fragment fade-up">
+								<h1>🧡</h1>
+							</div>
+							<div data-id="box3" class="fragment fade-up">
+								<img src="assets/salad.png" 
+								style="width: 60%; border-radius: 15%;" data-preview-image>
+							</div>
+						</div>
+					</section>
+
+					<section
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-image="assets/salad.png"
+					data-background-opacity="0.15"
+					data-background-transition="zoom"
+					>
+						<h2>
+							Kompilovaný kód
+						</h2>
+
+						<div class="r-hstack justify-center">
+							<div data-id="box1" class="fragment fade-up" style="width: 33%; margin-right: 2rem;">
+								<img src="assets/CheckList.png" >
+							</div>
+							<div data-id="box2" class="fragment fade-up" style="width: 33%; margin-right: 2rem;">
+								<img src="assets/shopping-bag.png">
+							</div>
+							<div data-id="box3" class="fragment fade-up" style="width: 33%;">
+								<img src="assets/cooking.png">
+							</div>
+						</div>
+
+						<aside class="notes">
+							Kompilace transformuje zdrojový kód na spustitelný strojový kód.<br>
+							Kompilátor provádí lexikální, syntaktickou a sémantickou analýzu.<br>
+							Kompilace je proces překladu zdrojového kódu od vysokoúrovňového jazyka (jako je C++, Java nebo Rust) po binární kód nebo strojový kód, který může procesor počítače provádět přímo.<br><br>
+							Napíšeš recept a seznam surovin (psaní zdrojového kódu - C/C++)<br>
+							Jdeš do obchodu a všechno nakoupíš dopředu (kompilace - kontrola chyb, příprava všeho potřebného)<br>
+							Přijdeš domů a vaříš bez přemýšlení (spuštění programu - execution)<br><br>
+							Když něco zapomeneš koupit, neuvaříš → chyba při kompilaci<br>
+							Samotné vaření je rychlé, protože už máš všechno připravené<br>
+							U kompilovaného kódu se všechno připraví předem, pak už se jen rychle vykonává.
+						</aside>
+					</section>
+
+					<section
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-image="assets/salad.png"
+					data-background-opacity="0.15"
+					data-background-transition="zoom"
+					>
+						<h2>
+							Interpretovaný kód
+						</h2>
+
+						<div class="r-hstack justify-center">
+							<div data-id="box1" class="fragment fade-up" style="width: 25%; margin-right: 1rem;">
+								<img src="assets/cooking.png">
+							</div>
+
+							<div data-id="box2" class="fragment fade-up" style="width: 25%;">
+								<img src="assets/CheckList.png" >
+							</div>
+
+							<div data-id="box3" class="fragment fade-up" style="font-size: 5rem;">
+								<h1>⇆</h1>
+							</div>
+
+							<div data-id="box4" class="fragment fade-up" style="width: 25%;">
+								<img src="assets/shopping-bag.png" >
+							</div>
+						</div>
+
+						<aside class="notes">
+						Začneš vařit bez nákupu dopředu (spuštění programu bez kompilace)<br>
+						Čteš recept krok po kroku (interpret čte kód řádek po řádku)<br>
+						U každého kroku zjistíš, co potřebuješ (interpret zjišťuje typy, operace, volání funkcí)<br>
+						Když něco chybí, běžíš zpět do obchodu (runtime error)<br><br>
+						Začneš vařit okamžitě<br>
+						Vaření je pomalejší, protože pořád kontroluješ recept<br>
+						Chyby zjistíš až během vaření<br><br>
+						Interpretovaný kód se vykonává krok za krokem, bez přípravy dopředu.
+						</aside>
+					</section>
+
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="node_modules/reveal.js-copycode/plugin/copycode/copycode.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
