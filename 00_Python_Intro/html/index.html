@@ -36,43 +36,41 @@
 				data-background-transition="zoom"
 				>
 					<section>
-						<h2>Co je Python?</h2>
+						<h2>🧑‍💻Co je Python?</h2>
 						<ul>
-							<li>Vysoce úrovňový programovací jazyk</li>
-							<li>Vytvořený s důrazem na čitelnost</li>
-							<li>Interpretovaný (nekompiluje se)</li>
-							<li>Open-source a zdarma</li>
+							<li class="fragment fade-up">Vysoce úrovňový programovací jazyk</li>
+							<li class="fragment fade-up">Vytvořený s důrazem na čitelnost</li>
+							<li class="fragment fade-up">Interpretovaný (nekompiluje se)</li>
+							<li class="fragment fade-up">Open-source a zdarma</li>
 						</ul>
 					</section>
 
 					<section>
-						<h2>Jak je starý Python?</h2>
+						<h2>👶Jak je starý Python?👴</h2>
 
-						<div class="r-vstack justify-center">
-							<div class="fragment fade-up" data-fragment-index="1">
-								<p>&lt;15 let</p>
-							</div>
+						<div class="fragment fade-up" data-fragment-index="1">
+							<p>&lt;15 let</p>
+						</div>
 
-							<div class="fragment fade-up" data-fragment-index="2">
-								<p>
-									<span class="fragment highlight-green" data-fragment-index="5">
-										35 let
-									</span>
-								</p>
-							</div>
+						<div class="fragment fade-up" data-fragment-index="2">
+							<p>
+								<span class="fragment highlight-green" data-fragment-index="5">
+									35 let
+								</span>
+							</p>
+						</div>
 
-							<div class="fragment fade-up" data-fragment-index="3">
-								<p>55 let</p>
-							</div>
+						<div class="fragment fade-up" data-fragment-index="3">
+							<p>55 let</p>
+						</div>
 
-							<div class="fragment fade-up" data-fragment-index="4">
-								<p>&gt;75 let</p>
-							</div>
+						<div class="fragment fade-up" data-fragment-index="4">
+							<p>&gt;75 let</p>
 						</div>
 					</section>
 
 					<section>
-						<h2>Trendy</h2>
+						<h2>📈Trendy</h2>
 						<img
 							src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.statcdn.com%2FInfographic%2Fimages%2Fnormal%2F16567.jpeg&f=1&nofb=1&ipt=ee620f06c02937fd27f152d7b6c3405ee7e8e536cfb392df9c77c03ed6946d67"
 							style="
@@ -86,181 +84,7 @@
 					</section>
 
 					<section>
-						<h2>
-							Python je „lepidlo světa“
-						</h2>
-
-						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbenjamin-simmonds.gallerycdn.vsassets.io%2Fextensions%2Fbenjamin-simmonds%2Fpythoncpp-debug%2F0.3.0%2F1660482707539%2FMicrosoft.VisualStudio.Services.Icons.Default&f=1&nofb=1&ipt=1b96d09326ffb018260532c3aac0455e62e8209866cfff4a229813cb6477ba4d"
-						style="max-width: 20%;">
-
-						<ul>
-							<li>
-								Python nevznikl jako rychlý jazyk, ale jako jazyk, který spojuje ostatní věci.
-							</li>
-							<li>
-								V praxi Python často volá C/C++ kód, aniž si to uživatel uvědomuje.
-							</li>
-						</ul>
-
-					</section>
-
-					<section>
-						<h2>
-							Většina „rychlého pythonu“ není python
-						</h2>
-
-						<div style="
-							display: flex;
-							flex-direction: column;
-							gap: 1rem;
-						">
-							<div style="
-								display: flex;
-								justify-content: space-around;
-							">
-								<img src="assets/NumPy.png" style="width: 10%;">
-								<img src="assets/Pandas.png" style="width: 20%;">
-							</div>
-
-							<div style="
-								display: flex;
-								justify-content: space-around;
-							">
-								<img src="assets/TensorFlow.png" style="width: 35%;">
-								<img src="assets/PyTorch.png" style="width: 20%; border-radius: 5%;">
-							</div>
-						</div>
-
-						<p>Všechny jsou napsané v C/C++</p>
-
-						<aside class="notes">
-							„Python je pomalý“ - ano.<br>
-							„Pythonové aplikace jsou pomalé“ - často ne.
-						</aside>
-					</section>
-
-					<section>
-						<h2>
-							Python nemá kompilátor (tak úplně)
-						</h2>
-
-						<div style="
-							flex: 1;
-							display: flex;
-							flex-direction: row;
-							gap: 12;
-						">
-							<div>
-								<ul>
-									<li>se nekompiluje do strojového kódu</li>
-									<li>ale do bytecode</li>
-									<li>který běží na Python Virtual Machine (PVM)</li>
-								</ul>
-							</div>
-
-							<div>
-								<img src="assets/Bytecode-vs-Machine-Code.jpg"
-								style="max-width: 100%;">
-							</div>
-						</div>
-
-						<p>žádný <b style="color: darkblue;background: #f9f2f4;padding: 2px 4px;border-radius: 3px;font-weight: bold;">main()</b>, linker a hlavičky</p>
-
-						<aside class="notes">
-							Proto je Python tak rychlý na vývoj, ale ne na běh.<br>
-						</aside>
-					</section>
-
-					<section>
-						<h2>Global Interpreter Lock (GIL) - nejkontroverznější věc v Pythonu</h2>
-
-						<img src="assets/GIL.png"
-						style="max-width: 40%;">
-
-						<ul>
-							<li>dovoluje běžet jen jednomu vláknu Python kódu</li>
-							<li>i na vícejádrovém CPU...</li>
-						</ul>
-
-						<p>Důsledek: threading ≠ paralelismus</p>
-					</section>
-
-					<section>
-						<h2>
-							Python byl navržen tak, aby se četl nahlas
-						</h2>
-						<p>Python je jediný mainstream jazyk, kde:</p>
-
-						<pre data-id="code-animation">
-							<code class="python" data-trim data-line-numbers>
-							for x in data:
-								if x > 0:
-									print(x)
-							</code>
-						</pre>
-
-						<p>… opravdu odpovídá tomu, jak bys to řekl lidsky.</p>
-						<p>žádné {}<br>žádné ;<br>odsazení má význam</p>
-
-						<aside class="notes">
-							{} - Složené<br>
-							; - Středník<br>
-							Proto je Python tak rychlý na vývoj, ale ne na běh.<br>
-						</aside>
-					</section>
-
-					<section>
-						<h2>
-							Python má „baterie v balení“
-						</h2>
-						<p>
-							Standardní knihovna je obrovská:
-						</p>
-						
-						<div style=" 
-							display: flex;
-							flex-direction: row;
-							gap: 1rem;"
-						>
-							<img src="assets/Python-Libraries.png" style="max-width: 60%;">
-							<ul>
-								<li>práce se soubory</li>
-								<li>JSON, CSV, XML</li>
-								<li>HTTP server</li>
-								<li>regulární výrazy</li>
-								<li>multiprocessing</li>
-								<li>testování</li>
-							</ul>
-						</div>
-
-						<p><b style="color: darkblue;background: #f9f2f4;padding: 2px 4px;border-radius: 3px;font-weight: bold;">import</b> a hotovo</p>
-					</section>
-
-					<section>
-						<h2>Python je extrémně tolerantní (a to je problém)</h2>
-						<ul>
-							<li>netrestá hned</li>
-							<li>dovolí ti spoustu věcí</li>
-							<li>chyby často najdeš až za běhu</li>
-						</ul>
-					
-						<pre data-id="code-animation">
-							<code class="python" data-trim data-line-numbers>
-								x = 5
-								x = "hello"
-							</code>
-						</pre>
-
-						<p>✅ Skvělé pro začátek</p>
-						<p>💣 Nebezpečné ve velkých projektech</p>
-
-						<aside class="notes">
-							Proto: type hints, mypy, pytest
-						</aside>
-					</section>
-
-					<section>
-						<h2>Python se používá tam, kde je chyba drahá</h2>
+						<h2>🤑Python se používá tam, kde je chyba drahá</h2>
 
 						<div style=" 
 							display: flex;
@@ -286,14 +110,281 @@
 							</div>
 
 							<div>
-								<p>Používají Python kvůli:</p>
+								<p class="fragment fade-up">Používají Python kvůli:</p>
 								<ul>
-									<li>čitelnosti</li>
-									<li>menšímu počtu bugů</li>
-									<li>rychlému prototypování</li>
+									<li class="fragment fade-up">čitelnosti</li>
+									<li class="fragment fade-up">menšímu počtu bugů</li>
+									<li class="fragment fade-up">rychlému prototypování</li>
 								</ul>
 							</div>
 						</div>
+					</section>
+
+					<section>
+						<h2>
+							🌍Python je „lepidlo světa“
+						</h2>
+
+						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbenjamin-simmonds.gallerycdn.vsassets.io%2Fextensions%2Fbenjamin-simmonds%2Fpythoncpp-debug%2F0.3.0%2F1660482707539%2FMicrosoft.VisualStudio.Services.Icons.Default&f=1&nofb=1&ipt=1b96d09326ffb018260532c3aac0455e62e8209866cfff4a229813cb6477ba4d"
+						style="max-width: 20%;">
+
+						<p class="fragment fade-up">
+							🪢Python nevznikl jako rychlý jazyk, ale jako jazyk, který spojuje ostatní věci.
+						</p>
+							<p class="fragment fade-up">
+								📞V praxi Python často volá C/C++ kód, aniž si to uživatel uvědomuje.
+							</p>
+
+					</section>
+
+					<section>
+						<h2>
+							📦Většina<br>„rychlého pythonu“<br>není python
+						</h2>
+
+						<div style="
+							display: flex;
+							flex-direction: column;
+							gap: 1rem;
+						">
+							<div style="
+								display: flex;
+								justify-content: space-around;
+							">
+								<img src="assets/NumPy.png" style="width: 10%;">
+								<img src="assets/Pandas.png" style="width: 20%;">
+							</div>
+
+							<div style="
+								display: flex;
+								justify-content: space-around;
+							">
+								<img src="assets/TensorFlow.png" style="width: 25%;">
+								<img src="assets/PyTorch.png" style="width: 15%; border-radius: 5%;">
+							</div>
+						</div>
+
+						<p class="fragment fade-up">Všechny jsou napsané v C/C++</p>
+
+						<aside class="notes">
+							„Python je pomalý“ - ano.<br>
+							„Pythonové aplikace jsou pomalé“ - často ne.
+						</aside>
+					</section>
+
+					<section>
+						<h2>
+							📃Python nemá kompilátor (tak úplně)
+						</h2>
+
+						<div style="
+							flex: 1;
+							display: flex;
+							flex-direction: row;
+							gap: 12;
+						">
+							<div>
+								<ul>
+									<li>se nekompiluje do strojového kódu</li>
+									<li>ale do bytecode</li>
+									<li>který běží na<br>Python Virtual Machine (PVM)</li>
+								</ul>
+							</div>
+
+							<div>
+								<img src="assets/Bytecode-vs-Machine-Code.jpg"
+								style="max-width: 100%;">
+							</div>
+						</div>
+
+						<p class="fragment fade-up">žádný <b style="color: darkblue;background: #f9f2f4;padding: 2px 4px;border-radius: 3px;font-weight: bold;">main()</b>, linker a hlavičky</p>
+
+						<aside class="notes">
+							Proto je Python tak rychlý na vývoj, ale ne na běh.<br>
+						</aside>
+					</section>
+
+					<section>
+						<h3>🔐Global Interpreter Lock (GIL) nejkontroverznější věc v Pythonu</h3>
+
+						<img src="assets/GIL.png"
+						style="max-width: 40%;">
+
+						<ul>
+							<li class="fragment fade-up">dovoluje běžet jen jednomu vláknu Python kódu</li>
+							<li class="fragment fade-up">i na vícejádrovém CPU...</li>
+						</ul>
+
+						<blockquote class="fragment fade-up">
+							&ldquo;threading ≠ paralelismus&rdquo;
+						</blockquote>
+
+						<p class="fragment fade-up">❌threading ✅multiprocessing</p>
+
+						<aside class="notes">
+							GIL je historické rozhodnutí kvůli jednoduchosti a stabilitě interpretu.
+						</aside>
+					</section>
+
+					<section>
+						<h2>
+							🏠Python byl navržen tak, aby se četl nahlas
+						</h2>
+						<p class="fragment fade-up">Python je jediný mainstream jazyk, kde:</p>
+
+						<pre data-id="code-animation" class="fragment fade-up">
+							<code class="python" data-trim data-line-numbers>
+							for x in data: # data = [52.3, 28.4, 0, 1.5, -142.4, 284.2]
+								if x > 0:
+									print(x)
+							</code>
+						</pre>
+
+						<p class="fragment fade-up">… opravdu odpovídá tomu, jak bys to řekl/a lidsky.</p>
+						<p class="fragment fade-up">žádné {}<br>žádné ;<br>odsazení má význam</p>
+
+						<aside class="notes">
+							{} - Složené<br>
+							; - Středník<br>
+							Proto je Python tak rychlý na vývoj, ale ne na běh.<br>
+						</aside>
+					</section>
+
+					<section>
+						<h2>
+							🔋Python má<br>„baterie v balení“
+						</h2>
+						<p>
+							Standardní knihovna je obrovská:
+						</p>
+						
+						<div style=" 
+							display: flex;
+							flex-direction: row;
+							gap: 1rem;"
+						>
+							<img src="assets/Python-Libraries.png" style="max-width: 60%;">
+							<ul>
+								<li>práce se soubory</li>
+								<li>JSON, CSV, XML</li>
+								<li>HTTP server</li>
+								<li>regulární výrazy</li>
+								<li>multiprocessing</li>
+								<li>testování</li>
+							</ul>
+						</div>
+
+						<p class="fragment fade-up"><b style="color: darkblue;background: #f9f2f4;padding: 2px 4px;border-radius: 3px;font-weight: bold;">import</b> a hotovo</p>
+					</section>
+
+					<section>
+						<h2 class="r-fit-text">😉Python je extrémně tolerantní<br>(a to je problém)</h2>
+						<ul>
+							<li>netrestá hned</li>
+							<li>dovolí ti spoustu věcí</li>
+							<li>chyby často najdeš až za běhu</li>
+						</ul>
+					
+						<pre data-id="code-animation">
+							<code class="python" data-trim data-line-numbers>
+								x = 5 # int
+								x = "hello" # string
+							</code>
+						</pre>
+
+						<p>✅ Skvělé pro začátek</p>
+						<p>💣 Nebezpečné ve velkých projektech</p>
+
+						<aside class="notes">
+							Proto: type hints, mypy, pytest
+						</aside>
+					</section>
+
+					<section>
+						<h2>❌Kde Python není vhodný</h2>
+
+						<ul>
+							<li class="fragment fade-up">Real-time systémy</li>
+							<li class="fragment fade-up">Embedded / mikrokontroléry bez OS</li>
+							<li class="fragment fade-up">Extrémně výkonnostní smyčky</li>
+							<li class="fragment fade-up">Aplikace s tvrdými časovými limity</li>
+							<li class="fragment fade-up">Nízká spotřeba paměti / energie</li>
+						</ul>
+
+						<blockquote class="fragment fade-up">
+							&ldquo;Python není špatný jazyk.<br>Je to špatný jazyk na špatné problémy.&rdquo;
+						</blockquote>
+
+						<aside class="notes">
+							Real-time -> „Když musíš reagovat do 5 ms - Python ti to nezaručí.“<br>
+							Embedded -> „Máš 64 KB RAM? Python si ani nenatáhne interpreter.“<br>
+							Výkon -> „Když běžíš miliardy iterací v čistém Pythonu - bude to bolet.“<br>
+							Paměť / baterie -> „Interpreter má režii, se kterou embedded svět nepočítá.“<br>
+							<br>
+							„Proto Python často řídí věci, které jsou napsané v C.“
+						</aside>
+					</section>
+
+					<section>
+						<h2>🌐Ekosystém & použití Pythonu</h2>
+
+						<div class="r-fit-text">
+
+							<p class="fragment fade-up">🔬Věda & výzkum ➡️ Matplotlib, OpenCV, wxPython</p>
+							<p class="fragment fade-up">⚙️Automatizace & skripty ➡️ buildy, deployment, práce se soubory</p>
+							<p class="fragment fade-up">🕸️Web ➡️ Django, Flask, FastAPI</p>
+							<p class="fragment fade-up">📊Data & AI ➡️ NumPy, Pandas, TensorFlow, PyTorch</p>
+							<p class="fragment fade-up">🧪Testování ➡️ pytest, unittest</p>
+						</div>
+							
+						<blockquote class="fragment fade-up">
+							&ldquo;Python není jeden obor.<br>🔨Python je nástrojový jazyk.&rdquo;
+						</blockquote>
+
+						<aside class="notes">
+							„Web backend, který obsluhuje miliony uživatelů“<br>
+							„Skript, který ušetří hodinu práce denně“<br>
+							„Vědecký výpočet, který by v C++ trval týdny psaní“<br>
+							„Testy, které hlídají, že se nic nerozbilo“<br>
+							<br>
+							„Python často není ten, kdo dělá těžkou práci.  Python říká, co se má stát.“
+						</aside>
+					</section>
+
+					<section>
+						<h2>✍️Jak se Python typicky píše</h2>
+
+						<div class="r-hstack justify-center" style="gap: 3rem;">
+							<div style="width: 45%;">
+								<h4 class="fragment fade-up">✅Python se typicky píše jako:</h4>
+								
+								<ul>
+									<li class="fragment fade-up">malé skripty</li>
+									<li class="fragment fade-up">moduly, které se importují</li>
+									<li class="fragment fade-up">krátké funkce</li>
+									<li class="fragment fade-up">kód, který se často spouští a upravuje</li>
+								</ul>
+							</div>
+
+							<div style="width: 45%;">
+								<h4 class="fragment fade-up">❌Ne jako:</h4>
+								
+								<ul>
+									<li class="fragment fade-up">jeden obří program</li>
+									<li class="fragment fade-up">tisíce řádků v jednom souboru</li>
+									<li class="fragment fade-up">build krok mezi změnou a spuštěním programu</li>
+								</ul>
+							</div>
+						</div>
+
+						<blockquote class="fragment fade-up" style="min-width: 80%;">
+							&ldquo;Python je jazyk pro přemýšlení u problému,<br>ne o jazyku.&rdquo;
+						</blockquote>
+
+						<aside class="notes">
+							„Napíšu pár řádků“ -> „Spustím“ -> „Podívám se, co to dělá“ -> „Upravím“<br>
+							„Python je jako psaní poznámek tužkou. C++ je jako rytí do kamene.“
+						</aside>
 					</section>
 
 				</section>
@@ -306,7 +397,7 @@
 					data-background-transition="zoom"
 					>
 
-						<h2>Programovací jazyky</h2>
+						<h2>🧙‍♂️Programovací jazyky</h2>
 						<img
 							src="assets/Levels_Of_PL.png"
 							style="
@@ -322,7 +413,7 @@
 					</section>
 
 					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
-						<h2>Interpretované programovací jazyky</h2>
+						<h2>👑Interpretované programovací jazyky</h2>
 						<div>
 
 							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2021%2F10%2FPython-Emblem.png&f=1&nofb=1&ipt=c3ff39e40846a430b00d4a3752640cc772cee198c87b56605902ee2172f657cb"
@@ -367,10 +458,10 @@
 							<code class="python" data-trim data-line-numbers="|1|3|4|6">
 								total = 0
 
-								for i in range(1, 11):
-									total += i
+								for i in range(1, 11): # [1;11)
+									total += i # total = total + i
 
-								print(total)
+								print(total) # 55
 							</code>
 							<aside class="notes">
 								Spočítej součet čísel od 1 do 10 a vypiš výsledek.<br><br>
@@ -390,7 +481,7 @@
 					</section>
 
 					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
-						<h2>Kompilované programovací jazyky</h2>
+						<h2>🏎️Kompilované🐈🗡️programovací jazyky</h2>
 						<div>
 							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ingenioempresa.com%2Fwp-content%2Fuploads%2F2022%2F09%2FC-Language.png&f=1&nofb=1&ipt=c1eb70e09b2c2e0279eac806748897e6889ad5c30f5bb591b9efcfa19203cd3a"
 							style=" max-width: 12%; "
@@ -436,9 +527,9 @@
 									int total = 0;
 
 									for (int i = 1; i <= 10; ++i)
-										total += i;
+										total += i; // total = total + i
 
-									std::cout << total << std::endl;
+									std::cout << total << std::endl; // 55
 									return 0;
 								}
 							</script>
@@ -463,7 +554,7 @@
 					</section>
 
 					<section data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)">
-						<h2>Assembly</h2>
+						<h2>💥Assembly</h2>
 
 						<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.tokyotechlab.com%2FBlog%2FBlog%25202024%2FBlog%2520T7%2Fngon_ngu_lap_trinh_assembly_964e6a3fe1.webp&f=1&nofb=1&ipt=158e8c0c26fd7d756ff25de3aa4f00c032ac7b6eb8ac3c7ad250a88e5bdf20a5"
 							style="  border-radius: 5%; max-width: 80%;"
@@ -622,7 +713,7 @@
 						</h2>
 						
 						<aside class="notes">
-							Shhh, these are your private notes 📝
+							A přesto se Python masivně používá - protože výkon není vždy to hlavní.
 						</aside>
 					</section>
 
