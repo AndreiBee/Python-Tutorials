@@ -280,20 +280,20 @@
 					<section>
 						<h2 class="r-fit-text">😉Python je extrémně tolerantní<br>(a to je problém)</h2>
 						<ul>
-							<li>netrestá hned</li>
-							<li>dovolí ti spoustu věcí</li>
-							<li>chyby často najdeš až za běhu</li>
+							<li class="fragment fade-up">netrestá hned</li>
+							<li class="fragment fade-up">dovolí ti spoustu věcí</li>
+							<li class="fragment fade-up">chyby často najdeš až za běhu</li>
 						</ul>
 					
-						<pre data-id="code-animation">
-							<code class="python" data-trim data-line-numbers>
-								x = 5 # int
-								x = "hello" # string
+						<pre data-id="code-animation" class="fragment fade-up">
+							<code class="python" data-trim data-line-numbers="1|2|">
+								x = 5 # int ☺️
+								x = "hello" # string 🤨
 							</code>
 						</pre>
 
-						<p>✅ Skvělé pro začátek</p>
-						<p>💣 Nebezpečné ve velkých projektech</p>
+						<p class="fragment fade-up">✅ Skvělé pro začátek</p>
+						<p class="fragment fade-up">💣 Nebezpečné ve velkých projektech</p>
 
 						<aside class="notes">
 							Proto: type hints, mypy, pytest
@@ -440,6 +440,7 @@
 						<!-- <p>Python, Java, Ruby, JavaScript</p> -->
 
 						<aside class="notes">
+							Hodně safe, ale pomalejší.<br>
 							Interpretovaný jazyk je takový, kde program neběží přímo jako strojový kód, ale někdo ho za běhu „čte a vykonává“.<br>
 							Tím „někým“ je interpret (u Pythonu např. python.exe).<br>
 							Jak to funguje:<br>
@@ -502,6 +503,7 @@
 						<!-- <p>C, C++, Rust, Go</p> -->
 
 						<aside class="notes">
+							"Zabit kočku souseda? Easy peasy"<br>
 							Kompilovaný jazyk je takový, kde se celý program nejdřív přeloží do strojového kódu dopředu.<br>
 							Ten překlad dělá kompilátor (např. g++).<br>
 							Jak to funguje:<br>
