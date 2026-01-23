@@ -193,7 +193,7 @@
 
 							<div>
 								<img src="assets/Bytecode-vs-Machine-Code.jpg"
-								style="max-width: 100%;">
+								style="max-width: 100%; border-radius: 5%;">
 							</div>
 						</div>
 
@@ -207,20 +207,53 @@
 					<section>
 						<h3>🔐Global Interpreter Lock (GIL) nejkontroverznější věc v Pythonu</h3>
 
-						<img src="assets/GIL.png"
-						style="max-width: 40%;">
+						<div
+							class="fragment fade-in-then-out"
+							data-fragment-index="0"
+							style="
+								position: absolute;
+								top: 80%;
+								left: 0;
+								right: 0;
+								display: flex;
+								justify-content: center;
+								z-index: 2;
+							"
+						>
+							<img src="assets/CPU_Threads.jpg" style="max-width: 50%; border-radius: 5%;">
+						</div>
 
-						<ul>
-							<li class="fragment fade-up">dovoluje běžet jen jednomu vláknu Python kódu</li>
-							<li class="fragment fade-up">i na vícejádrovém CPU...</li>
-						</ul>
+						<!-- LAYER 2: rest of the content -->
+						<div
+							class="fragment fade-in"
+							data-fragment-index="1"
+							style="
+								position: absolute;
+								top: 100%;
+								left: 0;
+								right: 0;
+								z-index: 1;
+							"
+						>
+							<img
+								src="assets/GIL.png"
+								style="max-width: 40%; border-radius: 5%;"
+								class="fragment fade-in"
+								data-fragment-index="1"
+							>
 
-						<blockquote class="fragment fade-up">
-							&ldquo;threading ≠ paralelismus&rdquo;
-						</blockquote>
+							<ul>
+								<li class="fragment fade-up">dovoluje běžet jen jednomu vláknu Python kódu</li>
+								<li class="fragment fade-up">i na vícejádrovém CPU...</li>
+							</ul>
 
-						<p class="fragment fade-up">❌threading ✅multiprocessing</p>
+							<blockquote class="fragment fade-up">
+								&ldquo;threading ≠ paralelismus&rdquo;
+							</blockquote>
 
+							<p class="fragment fade-up">❌threading ✅multiprocessing</p>
+
+						</div>
 						<aside class="notes">
 							GIL je historické rozhodnutí kvůli jednoduchosti a stabilitě interpretu.
 						</aside>
@@ -263,7 +296,7 @@
 							flex-direction: row;
 							gap: 1rem;"
 						>
-							<img src="assets/Python-Libraries.png" style="max-width: 60%;">
+							<img src="assets/Python-Libraries.png" style="max-width: 60%; border-radius: 5%;">
 							<ul>
 								<li>práce se soubory</li>
 								<li>JSON, CSV, XML</li>
