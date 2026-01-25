@@ -23,7 +23,7 @@
 				data-background-transition="zoom"
 				>
 					<h4>Programovací jazyk</h4>
-					<h1 style="color: #3870A2;">Python</h1>
+					<h1 style="color: #3870A2;"><a href="https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe">Python</a></h1>
 					<h5>
 						Jednoduchý. Čitelný. Praktický.
 					</h5>
@@ -497,15 +497,16 @@
 
 								print(total) # 55
 							</code>
-							<aside class="notes">
-								Spočítej součet čísel od 1 do 10 a vypiš výsledek.<br><br>
-								Čitelné.<br>
-								Pochopitelné i pro netechnického člověka.<br>
-								Žádné typy, žádné hlavičky, žádný boilerplate.<br>
-								Python nevznikl proto, aby byl rychlý, ale proto, aby člověk nemusel přemýšlet o věcech, které nesouvisí s problémem.
-							</aside>
 						</pre>
 						
+						<aside class="notes">
+							Spočítej součet čísel od 1 do 10 a vypiš výsledek.<br><br>
+							Čitelné.<br>
+							Pochopitelné i pro netechnického člověka.<br>
+							Žádné typy, žádné hlavičky, žádný boilerplate.<br>
+							Python nevznikl proto, aby byl rychlý, ale proto, aby člověk nemusel přemýšlet o věcech, které nesouvisí s problémem.
+						</aside>
+
 						<ol>
 							<li> Deklarace proměnné </li>
 							<li>Smyčka for</li>
@@ -843,6 +844,155 @@
 						Chyby zjistíš až během vaření<br><br>
 						Interpretovaný kód se vykonává krok za krokem, bez přípravy dopředu.
 						</aside>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+
+						<h2>🧱Co je objekt v Pythonu</h2>
+						<p class="fragment fade-up">
+							<strong>Objekt</strong> je konkrétní instance nějakého typu (třídy).
+						</p>
+
+						<p class="fragment fade-up">
+							Jednoduše řečeno:  
+							<strong>objekt = data + chování</strong>
+						</p>
+
+						<pre data-id="code-animation" class="fragment fade-up">
+							<code class="python" data-trim data-line-numbers>
+								x = 10 # int
+							</code>
+						</pre>
+
+						<p class="fragment fade-up">
+							Proměnná <code>x</code> není jen číslo – je to <strong>objekt typu int</strong>.
+						</p>
+
+						<aside class="notes">
+							V Pythonu je objekt úplně všechno.<br>I číslo. I řetězec. I funkce.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🧠 V Pythonu je všechno objekt</h2>
+
+						<ul>
+							<li class="fragment fade-up">Čísla (<code>int</code>, <code>float</code>)</li>
+							<li class="fragment fade-up">Řetězce (<code>str</code>)</li>
+							<li class="fragment fade-up">Seznamy (<code>list</code>)</li>
+							<li class="fragment fade-up">Funkce</li>
+							<li class="fragment fade-up">Třídy</li>
+						</ul>
+
+						<pre data-id="code-animation" class="fragment fade-up"><code class="python" data-trim data-line-numbers="1|2|3|">
+							print(type(10)) # class 'int'
+							print(type("ahoj")) # class 'str'
+							print(type(len)) # class 'builtin_function_or_method'
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>⚙️ Vlastnosti objektu</h2>
+
+						<p class="fragment fade-up">
+							Objekt má <strong>vlastnosti</strong>, kterým říkáme <strong>atributy</strong>.
+						</p>
+
+						<pre data-id="code-animation" class="fragment fade-up"><code class="python" data-trim data-line-numbers="1|2|3|4|">
+							class Employee:
+								def __init__(self, name='Radovan', salary=18000):
+									self.name = name
+									self.salary = salary
+
+								def show(self):
+									print(self.name)
+									print(self.salary)
+
+							emp1 = Employee()  # Create an instance
+
+							# Access attribute
+							print(getattr(emp1, 'name'))  
+
+							# Check attribute existence
+							print(hasattr(emp1, 'salary'))
+
+							# Dynamically add a new attribute
+							setattr(emp1, 'age', 30)  
+							print(getattr(emp1, 'age')) 
+
+							# Delete an instance attribute
+							delattr(emp1, 'salary')  
+							print(hasattr(emp1, 'salary'))
+						</code></pre>
+
+						<p class="fragment fade-up">
+							Atributy popisují <strong>stav</strong> objektu.
+						</p>
+						
+						<aside class="notes">
+							Atribut je něco, co objekt má.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🔧 Metody objektu</h2>
+
+						<p class="fragment fade-up">
+							<strong>Metody</strong> jsou funkce, které patří objektu.
+						</p>
+
+						<pre data-id="code-animation" class="fragment fade-up"><code class="python" data-trim data-line-numbers="1|2|3|">
+							text = "python" #str
+							print(text.upper()) # PYTHON
+							print(text.count("o")) # 1
+						</code></pre>
+
+						<p class="fragment fade-up">
+							Metody popisují <strong>chování</strong> objektu.
+						</p>
+
+						<p class="fragment fade-up">
+							Každý 'str' objekt má <strong>45</strong> atributů.
+						</p>
+
+						<aside class="notes">
+							Metoda je něco, co objekt umí dělat.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🔍 Jak zjistit, co objekt umí</h2>
+
+						<pre data-id="code-animation" class="fragment fade-up"><code class="python" data-trim data-line-numbers="1|2|">
+							text = "python" # str
+							print(len(dir(text))) # 81 
+						</code></pre>
+
+						<p class="fragment fade-up">
+							Funkce <code>dir()</code> vypíše všechny atributy a metody objektu.
+						</p>
+
+						<p class="fragment fade-up">
+							Skvělý nástroj pro objevování a učení.
+						</p>
+					</section>
+
+					<section>
+						<h2>🧩 Shrnutí</h2>
+
+						<ul>
+							<li class="fragment fade-up">Objekt = data + chování</li>
+							<li class="fragment fade-up">V Pythonu je všechno objekt</li>
+							<li class="fragment fade-up">Atributy = vlastnosti objektu</li>
+							<li class="fragment fade-up">Metody = co objekt umí dělat</li>
+						</ul>
+
+						<p class="fragment fade-up">
+							Python je objektový jazyk – a nesnaží se to skrývat.
+						</p>
 					</section>
 
 				</section>

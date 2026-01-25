@@ -25,8 +25,7 @@ By the end of this course, you will be able to:
 
 - A computer (Windows, macOS, or Linux)
 - Basic computer skills (files, folders, typing)
-- **No programming experience required**
-- Patience and consistency (this matters more than talent)
+- [link Python](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe)
 
 ---
 
@@ -40,7 +39,7 @@ By the end of this course, you will be able to:
 
 ## 📚 Course Structure
 
-### 1️⃣ Introduction & Setup
+### 1 Introduction & Setup
 - What programming is (and what it is not)
 - What Python is used for
 - Installing Python
@@ -52,7 +51,7 @@ By the end of this course, you will be able to:
 
 ---
 
-### 2️⃣ Basic Syntax & Variables
+### 2 Basic Syntax & Variables
 - What is code?
 - Python syntax rules
 - Variables and naming conventions
