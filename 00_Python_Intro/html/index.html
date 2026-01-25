@@ -385,6 +385,31 @@
 					</section>
 
 					<section>
+						<h2>💻Portabilita Pythonu🖥️</h2>
+						<p class="fragment fade-up">
+								<strong>Python kód je přenositelný</strong> mezi platformami.
+							</p>
+
+							<p class="fragment fade-up">
+								Stejný skript běží na:
+							</p>
+
+							<ul>
+								<li class="fragment fade-up">Windows</li>
+								<li class="fragment fade-up">Linux</li>
+								<li class="fragment fade-up">macOS</li>
+							</ul>
+
+							<pre data-id="code-animation" class="fragment fade-up"><code class="python" data-trim data-line-numbers>
+								print("Hello world")
+							</code></pre>
+
+							<p class="fragment fade-up">
+								➡️ bez rekompilace, bez změny kódu*
+							</p>
+					</section>
+
+					<section>
 						<h2>✍️Jak se Python typicky píše</h2>
 
 						<div class="r-hstack justify-center" style="gap: 3rem;">
@@ -904,28 +929,12 @@
 						<pre data-id="code-animation" class="fragment fade-up"><code class="python" data-trim data-line-numbers="1|2|3|4|">
 							class Employee:
 								def __init__(self, name='Radovan', salary=18000):
-									self.name = name
-									self.salary = salary
+									self.name = name # atribut
+									self.salary = salary #atribut
 
-								def show(self):
-									print(self.name)
+								def show(self): # metoda
+									print(self.name) 
 									print(self.salary)
-
-							emp1 = Employee()  # Create an instance
-
-							# Access attribute
-							print(getattr(emp1, 'name'))  
-
-							# Check attribute existence
-							print(hasattr(emp1, 'salary'))
-
-							# Dynamically add a new attribute
-							setattr(emp1, 'age', 30)  
-							print(getattr(emp1, 'age')) 
-
-							# Delete an instance attribute
-							delattr(emp1, 'salary')  
-							print(hasattr(emp1, 'salary'))
 						</code></pre>
 
 						<p class="fragment fade-up">
@@ -955,7 +964,7 @@
 						</p>
 
 						<p class="fragment fade-up">
-							Každý 'str' objekt má <strong>45</strong> atributů.
+							Každý 'str' objekt má <strong>45</strong> metod.
 						</p>
 
 						<aside class="notes">

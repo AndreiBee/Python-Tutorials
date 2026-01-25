@@ -1,191 +1,52 @@
-# Python for Beginners 🐍
+# Python pro začátečníky 🐍
 
-Welcome to the **Python for Beginners** course repository.
+Vítejte v repozitáři kurzu **Python pro začátečníky**.
 
-This repository is designed for students who are **completely new to programming** or have only minimal experience.  
-We start from the absolute basics and build solid fundamentals step by step.
+Tento repozitář je určen studentům, kteří jsou **úplně noví v programování** nebo mají jen minimální zkušenosti.  
+Začínáme od úplných základů a krok za krokem budujeme pevné základy.
 
-No shortcuts. No magic. Just real understanding.
-
----
-
-## 🎯 Course Goal
-
-By the end of this course, you will be able to:
-
-- Understand how programs actually work
-- Write simple but correct Python programs
-- Read and understand other people's code
-- Solve basic problems using logic, not guessing
-- Build a foundation for further learning (automation, data, backend, etc.)
+Žádné zkratky. Žádná magie. Jen skutečné pochopení.
 
 ---
 
-## 📦 What You Need Before Starting
+## 🎯 Cíl kurzu
 
-- A computer (Windows, macOS, or Linux)
-- Basic computer skills (files, folders, typing)
-- [link Python](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe)
+Na konci tohoto kurzu budete schopni:
 
----
-
-## 🛠 Tools Used
-
-- **Python 3.x**
-- **VS Code** (recommended editor)
-- Terminal / Command Line (basic usage will be taught)
+- Pochopit, jak programy skutečně fungují
+- Psát jednoduché, ale správné programy v Pythonu
+- Číst a rozumět cizímu kódu
+- Řešit základní problémy pomocí logiky, ne hádáním
+- Vybudovat si základ pro další studium (automatizace, data, backend atd.)
 
 ---
 
-## 📚 Course Structure
+## 📦 Co potřebujete před začátkem
 
-### 1 Introduction & Setup
-- What programming is (and what it is not)
-- What Python is used for
-- Installing Python
-- Installing VS Code
-- Running your first Python program
-- Understanding errors (very important)
-
-📂 Folder: `01_intro_setup`
+- Počítač (Windows, macOS nebo Linux)
+- Základní práci s počítačem (soubory, složky, psaní)
+- [Python](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe)
+- [VS Code](https://code.visualstudio.com/download#)
+- [Git](https://github.com/git-for-windows/git/releases/download/v2.52.0.windows.1/Git-2.52.0-64-bit.exe)
 
 ---
 
-### 2 Basic Syntax & Variables
-- What is code?
-- Python syntax rules
-- Variables and naming conventions
-- Numbers, strings, booleans
-- Comments and readability
+## 🛠 Použité nástroje
 
-📂 Folder: `02_variables_basics`
+- **Python 3.12**
+- **VS Code**
+- Terminál / příkazová řádka (základy se naučíme v kurzu)
 
 ---
 
-### 3️⃣ Input, Output & Simple Logic
-- `print()` properly explained
-- Getting input from the user
-- Type conversion (`int`, `float`, `str`)
-- Simple calculations
-- Common beginner mistakes
+## 📚 Struktura kurzu
 
-📂 Folder: `03_input_output`
+### 1. Úvod & Nastavení
+- Co je programování (a co není)
+- K čemu se Python používá
+- Instalace Pythonu
+- Instalace VS Code
+- Spuštění prvního Python programu
+- Pochopení chyb (velmi důležité)
 
----
-
-### 4️⃣ Conditions (if / else)
-- Boolean logic
-- Comparison operators
-- `if`, `elif`, `else`
-- Nested conditions
-- Writing readable conditions
-
-📂 Folder: `04_conditions`
-
----
-
-### 5️⃣ Loops
-- Why loops exist
-- `while` loop
-- `for` loop
-- `range()`
-- When NOT to use loops
-- Infinite loops (and how to avoid them)
-
-📂 Folder: `05_loops`
-
----
-
-### 6️⃣ Data Structures (Core Basics)
-- Lists
-- Tuples
-- Dictionaries
-- Indexing and slicing
-- Iterating over data
-
-📂 Folder: `06_data_structures`
-
----
-
-### 7️⃣ Functions
-- Why functions matter
-- Defining functions
-- Parameters and return values
-- Scope (local vs global)
-- Writing reusable code
-
-📂 Folder: `07_functions`
-
----
-
-### 8️⃣ Working With Files
-- Reading text files
-- Writing to files
-- File paths
-- Common file-related errors
-
-📂 Folder: `08_files`
-
----
-
-### 9️⃣ Errors & Debugging
-- Syntax errors vs runtime errors
-- Reading traceback messages
-- Debugging mindset
-- Why errors are your friends
-
-📂 Folder: `09_debugging`
-
----
-
-### 🔟 Mini Projects
-Practical projects combining everything learned so far:
-
-- Number guessing game
-- Simple calculator
-- Text-based menu program
-- File-based todo list
-
-📂 Folder: `10_projects`
-
----
-
-## 🧠 How To Study This Course
-
-- Read the code
-- Run the code
-- Break the code
-- Fix the code
-- Ask **why**, not just **how**
-
-Programming is not memorization — it is thinking.
-
----
-
-## 📌 Rules For Students
-
-- Copying without understanding is useless
-- Errors are normal
-- Googling is allowed, blind copying is not
-- If it works but you don’t understand it — it doesn’t count
-
----
-
-## 🚀 What Comes Next?
-
-After finishing this course, you can continue with:
-- Object-Oriented Programming (OOP)
-- Automation & scripting
-- Web development
-- Data analysis
-- Game development
-
-But only **after** the fundamentals are solid.
-
----
-
-## 🧑‍💻 Author
-
-Created for Python students who want to learn things the right way.
-
-Happy coding.
+📂 Složka: `00_Python_Intro`
