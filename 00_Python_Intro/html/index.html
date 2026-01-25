@@ -445,6 +445,62 @@
 						</aside>
 					</section>
 
+					<section>
+						<h2>🚫 Co se mi nelíbí v Pythonu</h2>
+
+						<ul class="r-fit-text">
+							<li class="fragment fade-up">
+								❌ Neexistuje <strong>skutečná const proměnná</strong>
+							</li>
+							<li class="fragment fade-up">
+								❌ Omezený <strong>scope</strong> (žádné libovolné bloky pomocí <code>{}</code>)
+							</li>
+						</ul>
+
+						<p class="fragment fade-up">
+							Python je jednoduchý, ale platí za to menší kontrolou.
+						</p>
+					</section>
+
+					<section>
+						<h2>❌ Const proměnné v Pythonu</h2>
+
+						<pre data-id="code-animation" class="fragment fade-up"><code class="python" data-trim data-line-numbers>
+							PI = 3.14 # float 3.14
+							PI = 20   # funguje bez chyby
+						</code></pre>
+
+						<p class="fragment fade-up">
+							Velká písmena jsou jen <strong>konvence</strong>, ne jazykové pravidlo.
+						</p>
+
+					</section>
+
+					<section>
+						<h2>🧱 Scope (rozsah platnosti)</h2>
+
+						<p class="fragment fade-up">
+							V Pythonu <strong>neexistuje blokový scope</strong> pomocí <code>{}</code>.
+						</p>
+
+						<pre data-id="code-animation" class="fragment fade-up"><code class="python" data-trim data-line-numbers>
+							if True:
+								x = 10
+
+							print(x)  # x stále existuje
+						</code></pre>
+
+						<p class="fragment fade-up">
+							Scope vzniká pouze:
+						</p>
+
+						<ul>
+							<li class="fragment fade-up">funkcí (<code>def</code>)</li>
+							<li class="fragment fade-up">třídou (<code>class</code>)</li>
+							<li class="fragment fade-up">modulem (soubor)</li>
+						</ul>
+					</section>
+
 				</section>
 
 				<section>
