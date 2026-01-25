@@ -41,7 +41,7 @@ Na konci tohoto kurzu budete schopni:
 
 ## 📚 Struktura kurzu
 
-### 1. Úvod & Nastavení
+### 0. Úvod & Nastavení
 - Co je programování (a co není)
 - K čemu se Python používá
 - Instalace Pythonu
