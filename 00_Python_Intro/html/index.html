@@ -12,21 +12,62 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			.reveal .footer {
+				position: fixed;
+				bottom: 0%;
+				left: 2%;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				font-size: 0.4em;
+				color: #94a3b8; /* jemná šedá */
+
+				opacity: 0.85;
+				z-index: 20;
+			
+				pointer-events: auto;
+			}
+
+			.reveal .footer a {
+				pointer-events: auto;
+			}
+
+			.reveal .footer img {
+				height: 28px;
+				width: auto;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section 
-				data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
-				data-background-image="assets/Python-Emblem.png" 
-				data-background-opacity="0.1" 
-				data-background-transition="zoom"
-				>
-					<h4>Programovací jazyk</h4>
-					<h1 style="color: #3870A2;"><a href="https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe">Python</a></h1>
-					<h5>
-						Jednoduchý. Čitelný. Praktický.
-					</h5>
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-image="assets/Python-Emblem.png" 
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
+					
+					<section>
+						<h4>Programovací jazyk</h4>
+						<h1 style="color: #3870A2;"><a href="https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe">Python</a></h1>
+						<h5>
+							Jednoduchý. Čitelný. Praktický.
+						</h5>
+					</section>
+
+					<section>
+						<h2>💽Instalace Pythonu</h2>
+						<div class="fragment fade-up">
+
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ceos3c.com%2Fwp-content%2Fuploads%2F2022%2F11%2Finstall-python-2.jpg&f=1&nofb=1&ipt=573f8140938ab8ac1c0270761718ca4952908571f1f39dc13561e17bb5315280"
+							style="border-radius: 5%;">
+						</div>
+					</section>
 				</section>
 
 				<section 
@@ -929,7 +970,11 @@
 
 				</section>
 
-				<section>
+				<section
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.15"
+					data-background-transition="zoom"
+				>
 					<section>
 
 						<h2>🧱Co je objekt v Pythonu</h2>
@@ -1061,7 +1106,31 @@
 					</section>
 
 				</section>
+
+				<section
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.15"
+					data-background-transition="zoom"
+				>
+					<section>
+						<h2>🏠Domácí úkol</h2>
+						<div class="fragment fade-up">
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-world.net%2Fwp-content%2Fuploads%2F2020%2F11%2FGitHub-Logo.png&f=1&nofb=1&ipt=bde88613c17334f5af71f157b4bd1c47241e2e80d7b064e7dd6c355c4957cb48"
+							style="filter: invert(1); max-width: 50%;">
+						</div>
+						<span class="fragment fade-up">Zaregistrovat se na GitHub</span>
+					</section>
+				</section>
+
+				<div class="footer">
+					<span>Andrej Pčelovodov</span>
+					<a href="https://arvion.cz" target="_blank">
+						<img src="https://arvion.cz/img/svg/logo-opt.svg" alt="Logo">
+					</a>
+				</div>
+
 			</div>
+
 		</div>
 
 		<script src="dist/reveal.js"></script>
