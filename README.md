@@ -41,7 +41,7 @@ Na konci tohoto kurzu budete schopni:
 
 ## 📚 Struktura kurzu
 
-### [0. Úvod & Nastavení](00_Python_Intro/00_Python_Intro.pdf)
+### [00. Úvod & Nastavení](00_Intro/00_Intro.pdf)
 - Co je programování (a co není)
 - K čemu se Python používá
 - Instalace Pythonu
@@ -49,4 +49,8 @@ Na konci tohoto kurzu budete schopni:
 - Spuštění prvního Python programu
 - Pochopení chyb (velmi důležité)
 
-📂 Složka: `00_Python_Intro`
+📂 Složka: `00_Intro`
+
+### [01. Virtuální Prostředí](01_Virtual_Environment/01_Virtual_Environment.pdf)
+
+📂 Složka: `01_Virtual_Environment`

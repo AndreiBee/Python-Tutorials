@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>00_Python_Intro</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			.reveal .footer {
+				position: fixed;
+				bottom: 0%;
+				left: 2%;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				font-size: 0.4em;
+				color: #94a3b8; /* jemná šedá */
+
+				opacity: 0.85;
+				z-index: 20;
+			
+				pointer-events: auto;
+			}
+
+			.reveal .footer a {
+				pointer-events: auto;
+			}
+
+			.reveal .footer img {
+				height: 28px;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
+					<section>
+						<h2>🍱 Virtuální prostředí v Pythonu</h2>
+					</section>
+
+					<section>
+					<h2>🐍 Virtuální prostředí v Pythonu</h2>
+
+					<p>
+						<strong>Virtuální prostředí (venv)</strong> je izolované prostředí pro Python projekt.
+					</p>
+
+					<ul>
+						<li class="fragment">Každý projekt má vlastní balíčky</li>
+						<li class="fragment">Žádné konflikty verzí</li>
+						<li class="fragment">Čistý a reprodukovatelný setup</li>
+					</ul>
+					</section>
+
+					<section>
+					<h2>❓ Proč používat venv?</h2>
+
+					<ul>
+						<li class="fragment">Různé projekty = různé verze knihoven</li>
+						<li class="fragment">Co funguje dnes, musí fungovat i za rok</li>
+						<li class="fragment">Bez rozbití globální instalace Pythonu</li>
+					</ul>
+
+					<p class="fragment">
+						👉 <strong>Jedno pravidlo:</strong> jeden projekt = jedno virtuální prostředí
+					</p>
+					</section>
+
+					<section>
+					<h2>🚨 Bez virtuálního prostředí</h2>
+
+					<pre><code class="language-bash" data-trim data-line-numbers="1|2|3|">
+					pip install numpy
+					pip install tensorflow
+					pip install flask
+					</code></pre>
+
+					<ul>
+						<li class="fragment">Všechno se instaluje globálně</li>
+						<li class="fragment">Konflikty verzí</li>
+						<li class="fragment">„Na mém počítači to funguje“</li>
+					</ul>
+					</section>
+				</section>
+
+				<section
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+				>
+					<section>
+					<h2>🛠️ Krok 1: vytvoření venv</h2>
+
+					<span class="r-fit-text">Otevřte PowerShell ve Windows (Terminal v MacOS/Linux)</span>
+					<pre><code class="language-bash" data-trim data-line-numbers="1|2|">
+						cd D:/Path/To/Project
+						python -m venv .venv # .venv - název složky
+					</code></pre>
+
+					<ul>
+						<li class="fragment">".venv" je název složky</li>
+						<li class="fragment">Vznikne izolované prostředí</li>
+						<li class="fragment">Žádné balíčky kromě základních</li>
+					</ul>
+					</section>
+
+					<section>
+					<h2>▶️ Krok 2: aktivace</h2>
+
+					<h4>Windows:</h4>
+					<pre><code class="language-bash" data-trim data-line-numbers>
+						.venv\Scripts\activate
+					</code></pre>
+
+					<h4>Linux / macOS:</h4>
+					<pre><code class="language-bash" data-trim data-line-numbers>
+						source .venv/bin/activate
+					</code></pre>
+
+					<p class="fragment">
+						Po aktivaci vidíš <strong>(.venv)</strong> v terminálu
+					</p>
+					</section>
+
+					<section>
+					<h2>📦 Krok 3: instalace balíčků</h2>
+	
+					<pre><code class="language-bash" data-trim data-line-numbers>
+						pip install requests
+						pip install numpy
+					</code></pre>
+	
+					<ul>
+						<li class="fragment">Instaluje se jen do .venv</li>
+						<li class="fragment">Globální Python zůstává čistý!</li>
+					</ul>
+					</section>
+
+					<section>
+					<h2>🧠 Jednoduchý příklad</h2>
+
+					<p>
+						Projekt A potřebuje:
+					</p>
+					<pre ><code data-trim data-line-numbers>
+						numpy==1.21
+					</code></pre>
+
+					<p>
+						Projekt B potřebuje:
+					</p>
+					<pre><code data-trim data-line-numbers>
+						numpy==2.0
+					</code></pre>
+
+					<p class="fragment">
+						👉 Bez venv <strong>problém</strong>, s venv <strong>žádný stres</strong>
+					</p>
+					</section>
+
+					<section>
+					<h2>📄 requirements.txt</h2>
+
+					<pre><code class="language-bash" data-trim data-line-numbers>
+					pip freeze > requirements.txt
+					</code></pre>
+
+					<pre><code class="language-bash" data-trim data-line-numbers>
+					pip install -r requirements.txt
+					</code></pre>
+
+					<ul>
+						<li class="fragment">Přesně stejné prostředí</li>
+						<li class="fragment">Ideální pro tým i produkci</li>
+					</ul>
+					</section>
+				
+					<section>
+					<h2>⏹️ Deaktivace</h2>
+
+					<pre><code class="language-bash" data-trim data-line-numbers>
+						deactivate
+					</code></pre>
+
+					<p class="fragment">
+						Vracíš se zpět do globálního Pythonu
+					</p>
+					</section>
+
+					<section>
+					<h2>✅ Shrnutí</h2>
+
+					<ul>
+						<li class="fragment">Virtuální prostředí je základ</li>
+						<li class="fragment">Používá se vždy, bez výjimek</li>
+						<li class="fragment">Šetří nervy, čas a rozbité projekty</li>
+					</ul>
+
+					<p class="fragment">
+						<strong>Staré pravidlo programátorů:</strong><br>
+						Co není izolované, to se dřív nebo později rozbije.
+					</p>
+					</section>
+				</section>
+
+				<div class="footer">
+					<span>Andrej Pčelovodov</span>
+					<a href="https://arvion.cz" target="_blank">
+						<img src="https://arvion.cz/img/svg/logo-opt.svg" alt="Logo">
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="node_modules/reveal.js-copycode/plugin/copycode/copycode.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+			Reveal.configure({ pdfMaxPagesPerSlide: 1 });
+		</script>
+	</body>
+</html>
