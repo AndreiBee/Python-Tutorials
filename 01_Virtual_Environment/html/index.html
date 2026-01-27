@@ -55,7 +55,156 @@
 					</section>
 
 					<section>
-					<h2>🐍 Virtuální prostředí v Pythonu</h2>
+						<h2>🧑‍💻 Visual Studio Code</h2>
+
+						<div style="display: flex;
+							flex-direction: row; gap: 1rem; justify-content: center;"
+							>
+							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F3053%2FPNG%2F512%2Fmicrosoft_visual_studio_code_alt_macos_bigsur_icon_189953.png&f=1&nofb=1&ipt=afe63165ac60ad11127916c96ba7a432223a70275864316682e6e3860c3a208d"
+							style="max-width: 10%;">
+							
+							<img src="assets/Python_Development_Extensions_Pack.png" style="max-width: 50%; border-radius: 5%;">
+						</div>
+						<ol>
+							<li class="fragment">Běžte na <br><strong>https://github.com/AndreiBee/Python-Tutorials</strong></li>
+							<li class="fragment">Nainstalujte si:<br><strong>Visual Studio Code</strong><br><strong>Python Development Extenstions Pack</strong></li>
+						</ol>
+					</section>
+
+					<section>
+						<h2 class="r-fit-text">🧪 Virtualní prostředí = pískoviště</h2>
+
+						<div style="display: flex; gap: 3rem;">
+
+							<div style="flex: 1;">
+							<h3>🏖️ Pískoviště</h3>
+							<ul>
+								<li class="fragment fade-up">Každé dítě má <strong>svůj vlastní prostor</strong></li>
+								<li class="fragment fade-up">Hračky se <strong>nemíchají</strong> s ostatními</li>
+								<li class="fragment fade-up">Když se rozbije, <strong>prostě ho zrušíš</strong></li>
+								<li class="fragment fade-up">Neovlivní ostatní děti</li>
+							</ul>
+							</div>
+
+							<div style="flex: 1;">
+							<h3>🐍 Python venv</h3>
+							<ul>
+								<li class="fragment fade-up">Každý projekt má <strong>vlastní prostředí</strong></li>
+								<li class="fragment fade-up">Knihovny se <strong>nemíchají</strong> s jinými projekty</li>
+								<li class="fragment fade-up">Když se rozbije, <strong>smažeš venv</strong></li>
+								<li class="fragment fade-up">Neovlivní globální Python</li>
+							</ul>
+							</div>
+
+							<aside class="notes">
+								Globální Python je jako veřejné hřiště.  Když tam každý rozhází svoje hračky, je z toho chaos.
+							</aside>
+
+						</div>
+
+						<p class="fragment fade-in r-fit-text" style="margin-top: 2rem;">
+							👉 <strong>venv = bezpečné pískoviště pro experimenty i vývoj</strong>
+						</p>
+					</section>
+
+					<section>
+						<h2>👨‍💼 Package managery</h2>
+
+						<div style="position: relative; margin-top: 2rem;">
+
+						<!-- Obrázky -->
+						<div style="
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							gap: 2rem;
+							opacity: 0.9;
+						">
+							<img class="fragment" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmrmint.fr%2Fwp-content%2Fuploads%2F2017%2F09%2Fanaconda_logo.png&f=1"
+								style="max-width: 30%;">
+
+							<img class="fragment" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmiro.medium.com%2Fv2%2Fresize%3Afit%3A750%2F1*AfI_Hm9z3umJ6Heq5CeRtg.png&f=1"
+								style="max-width: 30%; border-radius: 5%;">
+
+							<img class="fragment" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstorage.googleapis.com%2Fzenn-user-upload%2Ftopics%2Fc4b8a3d53e.png&f=1"
+								style="max-width: 16%; border-radius: 25%;">
+						</div>
+
+						<!-- Kříž přes obrázky -->
+						<div class="fragment fade-in"
+								style="
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -50%);
+								font-size: 8rem;
+								color: red;
+								pointer-events: none;
+								opacity: 0.8;
+								">
+							❌
+						</div>
+						</div>
+
+						<!-- Text -->
+						<p class="fragment fade-up r-fit-text" style="margin-top: 2rem; font-size: 0.9em;">
+						Pro výuku a pochopení základů je důležitější <strong>rozumět venv a pip</strong><br>
+						než používat nástroje, které všechno automatizují a schovávají.
+						</p>
+
+						<p class="fragment fade-up" style="font-size: 0.85em;">
+						👉 <strong>Nejdřív základy. Až pak nástroje.</strong>
+						</p>
+					</section>
+					<section>
+					<h2 class="r-fit-text">❌ Proč NEpoužíváme Anacondu</h2>
+
+					<ul style="font-size: 0.9em;">
+						<li class="fragment fade-up">
+						📦 <strong>Zbytečně obrovská</strong><br>
+						Anaconda má několik GB a obsahuje stovky balíků, které nikdy nepoužijeme.
+						</li>
+
+						<li class="fragment fade-up">
+						🔀 <strong>Conda ≠ pip</strong><br>
+						Používá vlastní balíčkovací systém → problémy s kompatibilitou a závislostmi.
+						</li>
+
+						<li class="fragment fade-up">
+						🔒 <strong>Uzavírá tě do vlastního ekosystému</strong><br>
+						Mimo Anacondu je pak člověk ztracený (nezná venv, pip, pyproject.toml).
+						</li>
+
+					</ul>
+					</section>
+
+					<section>
+					<h2 class="r-fit-text">❌ Proč NEpoužíváme Anacondu</h2>
+
+					<ul style="font-size: 0.9em;">
+						<li class="fragment fade-up">
+						⚙️ <strong>Špatná kompatibilita s praxí</strong><br>
+						CI/CD, Docker, produkční servery → všude se počítá s čistým Pythonem.
+						</li>
+
+						<li class="fragment fade-up">
+						📚 <strong>Nevhodná pro výuku základů</strong><br>
+						Skrývá, jak Python doopravdy funguje.
+						</li>
+
+						<li class="fragment fade-up">
+						🕰️ <strong>Historický důvod, který už neplatí</strong><br>
+						Dnes `pip install numpy` funguje bez problémů.
+						</li>
+					</ul>
+
+					<p class="fragment fade-in" style="margin-top: 1.5rem;">
+						👉 <strong>Anaconda dává smysl hlavně pro data science,<br>ne pro vývojáře.</strong>
+					</p>
+					</section>
+
+					<section>
+					<h2 class="r-fit-text">🐍 Virtuální prostředí v Pythonu</h2>
 
 					<p>
 						<strong>Virtuální prostředí (venv)</strong> je izolované prostředí pro Python projekt.
@@ -82,6 +231,7 @@
 					</p>
 					</section>
 
+				
 					<section>
 					<h2>🚨 Bez virtuálního prostředí</h2>
 
@@ -139,11 +289,12 @@
 					</section>
 
 					<section>
-					<h2>📦 Krok 3: instalace balíčků</h2>
+					<h2 class="r-fit-text">📦 Krok 3: instalace a ověření balíčků</h2>
 	
-					<pre><code class="language-bash" data-trim data-line-numbers>
+					<pre><code class="language-bash" data-trim data-line-numbers="1-2|3|">
 						pip install requests
 						pip install numpy
+						pip list
 					</code></pre>
 	
 					<ul>
@@ -212,10 +363,9 @@
 						<li class="fragment">Šetří nervy, čas a rozbité projekty</li>
 					</ul>
 
-					<p class="fragment">
-						<strong>Staré pravidlo programátorů:</strong><br>
-						Co není izolované, to se dřív nebo později rozbije.
-					</p>
+					<blockquote class="fragment fade-up">
+						&ldquo;Co není izolované,<br>to se dřív nebo později rozbije. &rdquo;
+					</blockquote>
 					</section>
 				</section>
 
