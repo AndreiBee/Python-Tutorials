@@ -55,19 +55,19 @@
 					</section>
 
 					<section>
-						<h2>🧑‍💻 Visual Studio Code</h2>
+						<h2>🧑‍💻 Notepad++</h2>
 
-						<div style="display: flex;
+						<!-- <div style="display: flex;
 							flex-direction: row; gap: 1rem; justify-content: center;"
 							>
 							<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F3053%2FPNG%2F512%2Fmicrosoft_visual_studio_code_alt_macos_bigsur_icon_189953.png&f=1&nofb=1&ipt=afe63165ac60ad11127916c96ba7a432223a70275864316682e6e3860c3a208d"
 							style="max-width: 10%;">
 							
 							<img src="assets/Python_Development_Extensions_Pack.png" style="max-width: 50%; border-radius: 5%;">
-						</div>
+						</div> -->
 						<ol>
 							<li class="fragment">Běžte na <br><strong>https://github.com/AndreiBee/Python-Tutorials</strong></li>
-							<li class="fragment">Nainstalujte si:<br><strong>Visual Studio Code</strong><br><strong>Python Development Extenstions Pack</strong></li>
+							<li class="fragment">Nainstalujte si:<br><strong>Notepad++</strong></li>
 						</ol>
 					</section>
 
@@ -367,6 +367,158 @@
 						&ldquo;Co není izolované,<br>to se dřív nebo později rozbije. &rdquo;
 					</blockquote>
 					</section>
+				</section>
+
+				<section
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+				>
+					<section>
+					<h2>🧪 Praktické cvičení: turtle</h2>
+
+					<ul>
+						<li class="fragment">Vytvoříme vizuální obrázek</li>
+					</ul>
+
+					</section>
+
+					<section>
+					<h2>📁 Příprava projektu</h2>
+
+					<pre><code class="language-bash" data-trim data-line-numbers="1|2|">
+						mkdir turtle_art
+						cd turtle_art
+					</code></pre>
+
+					<p class="fragment r-fit-text">
+						turtle je součást standardní knihovny → nic neinstalujeme
+					</p>
+					</section>
+
+					<section>
+						<h2 class="r-fit-text">🐢 Příklad 1: barevná spirála</h2>
+
+						<pre><code class="language-python fragment" data-trim data-line-numbers="1|2|4|5|6|8|9|10|11|13|">
+						import turtle
+						import random
+
+						t = turtle.Turtle()
+						t.speed(0)
+						t.pensize(20)
+
+						for i in range(100):
+							t.color(random.random(), random.random(), random.random()) # [0;1] RGB
+							t.forward(i * 4)
+							t.right(45)
+
+						turtle.done()
+						</code></pre>
+
+						<span class="fragment">
+							Notepad++ -> Run -> Run.. (F5)<br>
+						</span>
+
+						<pre><code class="language-bash fragment" data-trim data-line-numbers>
+							python.exe "$(FULL_CURRENT_PATH)"
+						</code></pre>
+
+
+						<p class="fragment">
+							Každý běh = jiný obrázek
+						</p>
+
+						<aside class="notes">
+							Open Notepad++. On the menu go to: Run -> Run.. (F5). Type in:<br>
+							python.exe "$(FULL_CURRENT_PATH)"
+						</aside>
+					</section>
+
+					<section>
+						<h2>🌸 Příklad 2: květina</h2>
+
+						<pre><code class="language-python fragment" data-trim data-line-numbers>
+						import turtle
+						import random
+
+						t = turtle.Turtle()
+						t.speed(0)
+
+						for i in range(36):
+							t.color(random.choice(["red", "purple", "blue", "orange"]))
+							t.circle(100)
+							t.right(10)
+
+						turtle.done()
+						</code></pre>
+
+						<span class="fragment">
+							Notepad++ -> Run -> Run.. (F5)<br>
+						</span>
+
+						<p class="fragment">
+							Ukázka rotace a opakování
+						</p>
+					</section>
+
+					<section>
+						<h2 class="r-fit-text">🔷 Příklad 3: geometrický chaos</h2>
+
+						<pre><code class="language-python" data-trim data-line-numbers>
+							import turtle
+							import random
+
+							t = turtle.Turtle()
+							t.speed(0)
+
+							for _ in range(50):
+								t.penup()
+								t.goto(random.randint(-200, 200), random.randint(-200, 200))
+								t.pendown()
+
+								t.color(random.random(), random.random(), random.random())
+								sides = random.randint(3, 8)
+
+								for _ in range(sides):
+									t.forward(50)
+									t.right(360 / sides)
+
+							turtle.done()
+						</code></pre>
+
+						<p class="fragment">
+							Každý má unikátní chaos
+						</p>
+					</section>
+
+					<section>
+						<h2>⭐ Dobrovolný úkol</h2>
+						
+						<p class="fragment">
+							Dokumentace Python Turtle:<br>https://docs.python.org/3/library/turtle.html
+						</p>
+
+						<ul>
+							<li class="fragment">Přidej podpis (jméno) do rohu</li>
+							<li class="fragment">Změň velikost okna a pozadí</li>
+						</ul>
+
+
+						<aside class="notes">
+							turtle.write("Home = ", True, align="center")<br>
+							turtle.bgcolor(r, g, b, /) OR<br>
+							turtle.screensize(canvwidth=None, canvheight=None, bg=None)
+						</aside>
+					</section>
+
+					<section>
+						<h2>🌱 PlantUML v Notepad++</h2>
+
+						<p class="fragment">Plugins -> Plugins Admin.. -> PlantUML -> Install</p>
+
+						<img class="fragment" src="assets/PlantUML.png" style="border-radius: 2%; max-width: 50%;">
+					</section>
+
 				</section>
 
 				<div class="footer">
