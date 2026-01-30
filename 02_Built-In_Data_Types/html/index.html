@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>02_Built-In_Data_Types</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			.reveal .footer {
+				position: fixed;
+				bottom: 0%;
+				left: 2%;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				font-size: 0.4em;
+				color: #94a3b8; /* jemná šedá */
+
+				opacity: 0.85;
+				z-index: 20;
+			
+				pointer-events: auto;
+			}
+
+			.reveal .footer a {
+				pointer-events: auto;
+			}
+
+			.reveal .footer img {
+				height: 28px;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
+					
+					<section>
+						<h1 class="r-fit-text">🧱 Built-in Data Types<br>v Pythonu</h1>
+						<p>Co Python skutečně nabízí - bez obalu</p>
+
+						<aside class="notes">
+							Úvodní slide. Zdůrazni, že datové typy jsou základ všeho.<br>
+							Bez jejich pochopení je Python jen chaos bez pravidel.
+						</aside>
+					</section>
+
+					<section>
+						<h2>Proč řešit datové typy?</h2>
+
+						<ul>
+							<li class="fragment">🧙‍♂️Python je dynamicky typovaný</li>
+							<li class="fragment">🪹To neznamená „bez typů“</li>
+							<li class="fragment">🪴🏠💻Typ určuje chování hodnoty</li>
+						</ul>
+
+						<aside class="notes">
+							Čaroděj, Kouzelník<br>
+							Tady je dobré srovnání s C++.<br>
+							Typy existují vždy - jen nejsou napsané explicitně.<br>
+							Python hlídá typy za běhu, ne při kompilaci.<br>
+						</aside>
+					</section>
+	
+					<section>
+						<h2>🔢 Číselné typy</h2>
+
+						<ul>
+							<li><code>int</code></li>
+							<li><code>float</code></li>
+							<li><code>complex</code></li>
+						</ul>
+
+						<aside class="notes">
+							Řekni, že většina studentů zná jen int a float.
+							Complex čísla jsou reálná věc - ne exotika.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3><code>int</code> - celé číslo</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|5|">
+							a = 10
+							b = -5 
+							c = 10_000_000 # _ - jen pro lepší čitelnost
+
+							print(type(a)) # class, 'int'
+						</code></pre>
+
+						<p class="fragment">📌 V Pythonu nemá <code>int</code> limit velikosti</p>
+
+						<aside class="notes">
+							Tohle je skvělé místo zmínit, že Python si paměť alokuje dynamicky.
+							Žádný overflow jako v C++.
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>float</code> - desetinné číslo</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|">
+							x = 0.1 + 0.2
+							print(x) # 0.30000000000000004
+						</code></pre>
+
+						<p class="fragment">❗ Výsledek není přesně 0.3</p>
+
+						<aside class="notes">
+							Vysvětli binární reprezentaci.
+							Zdůrazni, že to není chyba Pythonu - ale hardware.
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>complex</code> - komplexní čísla</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|">
+							z = 3 + 4j
+							print(z.real) # 3
+							print(z.imag) # 4
+						</code></pre>
+
+						<aside class="notes">
+							Zajímavost: Python má komplexní čísla přímo v jazyce.
+							Většina jazyků potřebuje knihovny.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🔤 Textový typ</h2>
+						<h3><code>str</code></h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|4|">
+							text = "Hello"
+							text2 = 'World'
+
+							print(text1 + ", " + text2 + '!') # Hello, World!
+						</code></pre>
+
+						<aside class="notes">
+							Řekni, že neexistuje char.
+							Všechno je string.
+						</aside>
+					</section>
+
+					<section>
+						<h3>Zajímavost o <code>str</code></h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|">
+							s = "Python"
+							print(s[0])
+						</code></pre>
+
+						<p class="fragment">📌 Stringy jsou <strong>immutable</strong></p>
+
+						<aside class="notes">
+							Zdůrazni slovo immutable.
+							Hodně bugů vzniká nepochopením tohohle.
+						</aside>
+					</section>
+
+					<section>
+						<h2>📦 Kolekce</h2>
+
+						<ul>
+							<li><code>list</code></li>
+							<li><code>tuple</code></li>
+							<li><code>set</code></li>
+							<li><code>dict</code></li>
+						</ul>
+
+						<aside class="notes">
+							Tohle je srdce Pythonu.
+							Bez kolekcí by Python nebyl Python.
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>list</code> - seznam</h3>
+
+						<pre><code class="python" data-trim data-line-numbers>
+							numbers = [1, 2, 3]
+							numbers.append(4)
+							numbers[0] = 99
+						</code></pre>
+
+						<p class="fragment">✔ Mutable</p>
+
+						<aside class="notes">
+							List = dynamické pole.
+							Přirovnej k vectoru v C++.
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>tuple</code> - neměnný seznam</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|">
+							coords = (10, 20)
+							# coords[0] = 99  # chyba
+						</code></pre>
+
+						<p class="fragment">✔ Rychlejší a bezpečnější</p>
+
+						<aside class="notes">
+							Tuple se často používá jako návratová hodnota funkcí.
+							Zaručuje, že se data nezmění.
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>set</code> - množina</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|">
+							s = {1, 2, 3, 3, 3}
+							print(s) # {1, 2, 3}
+						</code></pre>
+
+						<p class="fragment">📌 Automaticky odstraňuje duplicity</p>
+
+						<aside class="notes">
+							Zdůrazni, že set nemá pořadí.
+							Použití: unikátní hodnoty, rychlé testy existence.
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>dict</code> - slovník</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|6|">
+							user = {
+								"name": "Alice",
+								"age": 30
+							}
+
+							print(user["name"]) # Alice
+						</code></pre>
+
+						<aside class="notes">
+							Dict je extrémně důležitý.
+							Základ JSONu, konfigurací, API.
+						</aside>
+					</section>
+					
+					<section>
+						<h2>🔁 Pravda a nepravda</h2>
+
+						<pre><code class="python" data-trim data-line-numbers>
+							if []:
+								print("pravda")
+							else:
+								print("nepravda")
+						</code></pre>
+
+						<aside class="notes">
+							Tady vysvětli truthy / falsy hodnoty.
+							Prázdné kolekce = False.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🧠 Zajímavosti na závěr</h2>
+
+						<ul>
+							<li class="fragment">Všechno je objekt</li>
+							<li class="fragment">Typ zjistíš pomocí <code>type()</code></li>
+							<li class="fragment">Python typy kontroluje za běhu</li>
+						</ul>
+
+						<aside class="notes">
+							Uzavři to tím, že datové typy nejsou detail.
+							Jsou základ správného programování.
+						</aside>
+					</section>
+
+				</section>
+
+				<div class="footer">
+					<span>Andrej Pčelovodov</span>
+					<a href="https://arvion.cz" target="_blank">
+						<img src="https://arvion.cz/img/svg/logo-opt.svg" alt="Logo">
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="node_modules/reveal.js-copycode/plugin/copycode/copycode.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+			Reveal.configure({ pdfMaxPagesPerSlide: 1 });
+		</script>
+	</body>
+</html>
