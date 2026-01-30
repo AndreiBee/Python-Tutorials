@@ -1,5 +1,7 @@
 # Python pro začátečníky 🐍
 
+![Course Logo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.4-h.org%2Fwp-content%2Fuploads%2F2024%2F06%2F27164501%2FPython_Coding_Course_Thumbnail.jpg&f=1&nofb=1&ipt=2fbeead9cf8e4250205b61c6a0626b527c7396d6a0983725a039b631cf9369ce)
+
 Vítejte v repozitáři kurzu **Python pro začátečníky**.
 
 Tento repozitář je určen studentům, kteří jsou **úplně noví v programování** nebo mají jen minimální zkušenosti.  
