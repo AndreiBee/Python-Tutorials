@@ -79,7 +79,7 @@
 					</section>
 	
 					<section>
-						<h2>🔢 Číselné typy</h2>
+						<h2>🔢 Číselné typy (immutable)</h2>
 
 						<ul>
 							<li><code>int</code></li>
@@ -97,15 +97,30 @@
 					<section>
 						<h3><code>int</code> - celé číslo</h3>
 
-						<pre><code class="python" data-trim data-line-numbers="1|2|3|5|">
+						<pre><code class="python" data-trim data-line-numbers="1|2|4|5|7|8|9|10|11|12|13|15|17|18|19|20|">
 							a = 10
-							b = -5 
+							print(type(a)) # class, 'int'
+
+							b = 4 
+							print(type(b)) # class, 'int'
+
+							a + b		# 14		addition
+							a - b		# 6			subtraction
+							a * b		# 40		multiplication
+							a / b		# 2.5		true division 
+							a // b	# 2			integer division
+							a % b		# 2				modulo operation (remainder of division)
+							a ** b	# 10_000	power operation
+							
 							c = 10_000_000 # _ - jen pro lepší čitelnost
 
-							print(type(a)) # class, 'int'
+							# Mutability
+							print(id(a)) # 140721920361512
+							a = 20
+							print(id(a)) # 140721920361992
 						</code></pre>
 
-						<p class="fragment">📌 V Pythonu nemá <code>int</code> limit velikosti</p>
+						<p class="fragment">📌 V Pythonu nemá <code>int</code> limit velikosti - [-∞;∞]</p>
 
 						<aside class="notes">
 							Tohle je skvělé místo zmínit, že Python si paměť alokuje dynamicky.
@@ -114,29 +129,174 @@
 					</section>
 
 					<section>
-						<h3><code>float</code> - desetinné číslo</h3>
-
-						<pre><code class="python" data-trim data-line-numbers="1|2|">
-							x = 0.1 + 0.2
-							print(x) # 0.30000000000000004
+						<h3><code>int</code> - celé číslo</h3>
+						<h3>Záporná čísla</h3>
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|">
+							7 / 4		# 1.75	true division
+							7 // 4	# 1			integer division
+							-7 / 4	# -1.75	true division
+							-7 //4	# -2		integer division
 						</code></pre>
 
-						<p class="fragment">❗ Výsledek není přesně 0.3</p>
+						<p class="fragment r-fit-text">📌 V Pythonu se celočíselné dělení (//) zaokrouhluje dolů,<br>tj. k minus nekonečnu.</p>
+					</section>
+
+					<section>
+						<h3><code>boolean</code> - pravda / nepravda (immutable)</h3>
+					
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|7|8|9|11|12|13|">
+						int(True)			# 1
+						int(False)		# 0
+						bool(1)				# evaluates to True in a Boolean context
+						bool(-42)			# any non-zero number evaluates to True!
+						bool(0)				# False
+						not True			# False
+						not False			# True
+						True and True	# True
+						False or True	# True
+
+						1 + True			# 2
+						False + 42		# 42
+						7 - True			# 6
+						</code></pre>
+
+						<p class="fragment r-fit-text">📌 Upcasting je operace převodu typů, která probíhá z podtřídy do nadřazené třídy. V tomto příkladu jsou hodnoty True a False, které patří do třídy odvozené od třídy integer, v případě potřeby převedeny zpět na celá čísla. </p>
+					</section>
+
+					<section>
+						<h3><code>float</code> - desetinné číslo (immutable)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|">
+							pi = 3.141592
+							radius = 4.5
+							print(type(radius)) # class 'float'
+							area = pi * (radius ** 2)
+							print(area) # 63.617238
+						</code></pre>
+
+						<p class="fragment">❗ Python podporuje pouze double (64-bit) format.</p>
+						<!-- <p class="fragment">❗ Výsledek není přesně 0.3</p> -->
 
 						<aside class="notes">
-							Vysvětli binární reprezentaci.
-							Zdůrazni, že to není chyba Pythonu - ale hardware.
 						</aside>
 					</section>
 
 					<section>
-						<h3><code>complex</code> - komplexní čísla</h3>
+						<h3><code>float</code> - desetinné číslo (immutable)</h3>
 
-						<pre><code class="python" data-trim data-line-numbers="1|2|3|">
-							z = 3 + 4j
-							print(z.real) # 3
-							print(z.imag) # 4
+						<pre><code class="python" data-trim data-line-numbers="1|2|5|8|">
+						import sys
+						sys.float_info
+						# sys.float_info
+						#	(
+						#		max=1.7976931348623157e+308, 
+						#		max_exp=1024, 
+						# 	max_10_exp=308, 
+						# 	min=2.2250738585072014e-308, 
+						# 	min_exp=-1021, 
+						# 	min_10_exp=-307, 
+						# 	dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1
+						# )
 						</code></pre>
+
+						<p class="fragment r-fit-text">[-1.7976931348623157e+308;1.7976931348623157e+308]</p>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+
+					<section>
+						<h3><code>float</code> - desetinné číslo (immutable)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|5|8|">
+						0.3 - 0.1 * 3 # this should be 0!!!
+						# -5.551115123125783e-17
+						</code></pre>
+
+						<p class="fragment r-fit-text">✅ Typ Decimal</p>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>float</code> - desetinné číslo (immutable)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|7|8|9|11|12|">
+						from decimal import Decimal as D # pro pohodlnost
+						D(3.14) # protože konverze probíhá z typu float na typ Decimal
+						# Decimal('3.140000000000000124344978758017532527446746826171875')
+						D("3.14") # ze stringu, OK
+						# Decimal('3.14')
+						D(0.1) * D(3) - D(0.3) # protože konverze probíhá z typu float na typ Decimal
+						# Decimal('2.775557561565156540423631668E-17')
+						D("0.1") * D(3) - D("0.3") # string, int, string, OK
+						# Decimal('0.0')
+
+						D("3.2").as_integer_ratio() # 3.2 == 32/10 == 16/5
+						# (16, 5)
+						</code></pre>
+
+						<p class="fragment r-fit-text">✅ Construct Decimal from string or int!</p>
+
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>complex</code> - komplexní čísla (immutable)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|7|8|9|10|11|12|13|">
+							z = 3.14 + 2.73j
+							z = complex(3.14, 2.73)
+							print(z.real) # 3.14
+							print(z.imag) # 2.73
+							z.conjugate()	# A + Bj -> A - Bj
+							# (3.14-2.73j)
+							z * 2 # násobení
+							# (6.28+5.46j)
+							z ** 2 # exponent
+							# (2.2420000000000018+17.3328j)
+							x = 1 + 1j
+							z - x
+							# (2.14+1.7599999999999998j)
+						</code></pre>
+
+						<p class="fragment r-fit-text">✅ Python má komplexní čísla přímo v jazyce.</p>
+
+						<aside class="notes">
+							Zajímavost: Python má komplexní čísla přímo v jazyce.
+							Většina jazyků potřebuje knihovny.
+						</aside>
+					</section>
+
+					<section>
+						<h3><code>fractions</code> - zlomky (immutable)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|7|8|9|10|11|12|14|15|16|17|18|19|">
+						from fractions import Fraction
+						Fraction(10, 6)
+						# Fraction(5, 3)
+						Fraction(1, 3) + Fraction(2, 3) # 1/3 + 2/3 == 3/3 == 1/1
+						# Fraction(1, 1)
+						f = Fraction(10, 6) 
+						f.numerator
+						# 5
+						f.denominator
+						# 3
+						f.as_integer_ratio()
+						# (5, 3)
+
+						Fraction(0.125)
+						# Fraction(1, 8)
+						Fraction("3 / 7")
+						# Fraction(3, 7)
+						Fraction("-.250")
+						# Fraction(-1, 4)
+						</code></pre>
+
+						<p class="fragment r-fit-text">✅ Finance a Science v Pythonu.</p>
 
 						<aside class="notes">
 							Zajímavost: Python má komplexní čísla přímo v jazyce.
