@@ -78,6 +78,13 @@
 						</aside>
 					</section>
 	
+				</section>
+
+				<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
 					<section>
 						<h2>🔢 Číselné typy (immutable)</h2>
 
@@ -85,6 +92,7 @@
 							<li><code>int</code></li>
 							<li><code>float</code></li>
 							<li><code>complex</code></li>
+							<li><code>fractions</code></li>
 						</ul>
 
 						<aside class="notes">
@@ -142,7 +150,7 @@
 					</section>
 
 					<section>
-						<h3><code>boolean</code> - pravda / nepravda (immutable)</h3>
+						<h3><code>boolean</code> - pravda / nepravda</h3>
 					
 						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|7|8|9|11|12|13|">
 						int(True)			# 1
@@ -164,7 +172,7 @@
 					</section>
 
 					<section>
-						<h3><code>float</code> - desetinné číslo (immutable)</h3>
+						<h3><code>float</code> - desetinné číslo</h3>
 
 						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|">
 							pi = 3.141592
@@ -182,7 +190,7 @@
 					</section>
 
 					<section>
-						<h3><code>float</code> - desetinné číslo (immutable)</h3>
+						<h3><code>float</code> - desetinné číslo</h3>
 
 						<pre><code class="python" data-trim data-line-numbers="1|2|5|8|">
 						import sys
@@ -207,7 +215,7 @@
 
 
 					<section>
-						<h3><code>float</code> - desetinné číslo (immutable)</h3>
+						<h3><code>float</code> - desetinné číslo</h3>
 
 						<pre><code class="python" data-trim data-line-numbers="1|2|5|8|">
 						0.3 - 0.1 * 3 # this should be 0!!!
@@ -221,7 +229,7 @@
 					</section>
 
 					<section>
-						<h3><code>float</code> - desetinné číslo (immutable)</h3>
+						<h3><code>float</code> - desetinné číslo</h3>
 
 						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|7|8|9|11|12|">
 						from decimal import Decimal as D # pro pohodlnost
@@ -245,7 +253,7 @@
 					</section>
 
 					<section>
-						<h3><code>complex</code> - komplexní čísla (immutable)</h3>
+						<h3><code>complex</code> - komplexní čísla</h3>
 
 						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|7|8|9|10|11|12|13|">
 							z = 3.14 + 2.73j
@@ -272,7 +280,7 @@
 					</section>
 
 					<section>
-						<h3><code>fractions</code> - zlomky (immutable)</h3>
+						<h3><code>fractions</code> - zlomky</h3>
 
 						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|7|8|9|10|11|12|14|15|16|17|18|19|">
 						from fractions import Fraction
@@ -305,14 +313,153 @@
 					</section>
 
 					<section>
+						<h2>🔼 Implicitní type casting</h2>
+
+						<p>
+							Python při výpočtech <strong>automaticky povyšuje typy</strong>,<br>
+							aby nepřišel o informaci.
+						</p>
+
+						<p class="fragment">
+							Castování probíhá vždy <strong>směrem nahoru</strong>.
+						</p>
+
+						<aside class="notes">
+							Tohle je důležitý moment: studentům říct, že Python
+							sice vypadá jednoduše, ale typy bere vážně.
+							Nic se neděje náhodou.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🏗️ Hierarchie číselných typů</h2>
+
+						<pre><code class="text" data-trim>
+							bool  →  int  →  float  →  complex
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>bool</code> je podtřída <code>int</code></li>
+							<li class="fragment"><code>int</code> se povyšuje na <code>float</code></li>
+							<li class="fragment">Python volí vždy „širší“ typ</li>
+						</ul>
+
+						<aside class="notes">
+							Tohle je dobré přirovnat ke kbelíkům s různým objemem.
+							Malý se může přelít do většího, opačně to nejde bez ztráty.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🧮 Smíšený výpočet</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|4|6|7|">
+							a = 3      # int
+							b = 4.5    # float
+
+							c = a * b
+
+							print(c)
+							print(type(c))
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>a</code> se dočasně převede na <code>3.0</code></li>
+							<li class="fragment">proběhne výpočet <code>3.0 * 4.5</code></li>
+							<li class="fragment">výsledek je <code>float</code></li>
+						</ul>
+
+						<aside class="notes">
+							Zdůraznit slovo „dočasně“.
+							Python nemění proměnnou, jen způsob výpočtu.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🔍 Typ se nemění zpětně</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|5|6|7|">
+							a = 3
+							b = 4.5
+							c = a * b
+
+							print(type(a))
+							print(type(b))
+							print(type(c))
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>a</code> zůstává <code>int</code></li>
+							<li class="fragment">cast probíhá jen uvnitř výrazu</li>
+						</ul>
+
+						<aside class="notes">
+							Tady je dobré rozbít mylnou představu,
+							že Python „přetypovává proměnné“.
+							Nepřetypovává.
+						</aside>
+					</section>
+
+					<section>
+						<h2>✅ <code>bool</code> je vlastně <code>int</code></h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|">
+							print(True + 1)      # 2
+							print(True * 2.5)    # 2.5
+							print(isinstance(True, int))  # True
+						</code></pre>
+
+						<p class="fragment">
+							<code>True → 1 → 1.0</code>
+						</p>
+
+						<aside class="notes">
+							Tady většinou studentům „cvakne“,
+							proč fungují podmínky tak, jak fungují.
+						</aside>
+					</section>
+
+					<section>
+						<h2>📌 Shrnutí</h2>
+
+						<p>
+							Python při výpočtech automaticky povyšuje typy:
+						</p>
+
+						<pre><code class="text" data-trim>
+							bool → int → float
+						</code></pre>
+
+						<p class="fragment">
+							Cílem je <strong>neztratit přesnost</strong>.
+						</p>
+
+						<aside class="notes">
+							Zakončit tím, že tohle chování je konzistentní,
+							předvídatelné a historicky osvědčené.
+						</aside>
+					</section>
+				</section>
+
+				<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
+					<section>
 						<h2>🔤 Textový typ</h2>
 						<h3><code>str</code></h3>
 
-						<pre><code class="python" data-trim data-line-numbers="1|2|4|">
-							text = "Hello"
-							text2 = 'World'
-
-							print(text1 + ", " + text2 + '!') # Hello, World!
+						<pre><code class="python" data-trim data-line-numbers="1|2|3-4|5-6|8|9|">
+							str1 = 'Single quotes.'
+							str2 = "Double quotes."
+							str3 = '''Triple
+							quotes'''
+							str4 = """Triple
+							double-quotes."""
+							
+							str(str4) # User friendly version of string
+							repr(str4) # Only for debugging
 						</code></pre>
 
 						<aside class="notes">
@@ -324,9 +471,13 @@
 					<section>
 						<h3>Zajímavost o <code>str</code></h3>
 
-						<pre><code class="python" data-trim data-line-numbers="1|2|">
+						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|6|">
 							s = "Python"
-							print(s[0])
+							len(s)
+							s.removeprefix("Py")
+							s.removesuffix("on")
+							print(s)
+							s.removeprefix("User")
 						</code></pre>
 
 						<p class="fragment">📌 Stringy jsou <strong>immutable</strong></p>
@@ -337,6 +488,290 @@
 						</aside>
 					</section>
 
+					<section>
+						<h2 class="r-fit-text">🔤 Encoding (kódování textu)</h2>
+
+						<p>
+							<strong>Encoding</strong> určuje, jak jsou znaky
+							uloženy jako bajty<br>v paměti nebo v souboru.
+						</p>
+
+						<ul>
+							<li class="fragment">Počítač rozumí jen číslům (bajtům)</li>
+							<li class="fragment">Text je jen dohoda</li>
+							<li class="fragment">Bez správného encodingu vzniká chaos</li>
+						</ul>
+
+						<aside class="notes">
+							Studentům říct, že text není samozřejmost.
+							Bez dohody o kódování jsou bajty jen šum.
+						</aside>
+					</section>
+
+					<section>
+						<h2>📜 ASCII vs UTF-8</h2>
+
+						<ul>
+							<li><strong>ASCII</strong> – 128 znaků (angličtina)</li>
+							<li class="fragment"><strong>UTF-8</strong> – celý Unicode svět</li>
+							<li class="fragment">diakritika, emoji, asijské znaky</li>
+						</ul>
+
+						<pre><code class="text" data-trim>
+							A  	-> 65
+							č  	-> 11001000 10101101
+							😀 	-> 11110000 10011111 10011000 10000000
+						</code></pre>
+
+						<aside class="notes">
+							ASCII je historická záležitost.
+							UTF-8 je zpětně kompatibilní a dnes standard.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🐍 UTF-8 v Pythonu 3</h2>
+
+						<p>
+							V Pythonu 3 je <strong>string Unicode</strong>.
+						</p>
+
+						<pre><code class="python" data-trim data-line-numbers>
+							text = "Příliš žluťoučký kůň 🐎"
+							print(text)
+							print(type(text))
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>str</code> ≠ bajty</li>
+							<li class="fragment">žádný encoding uvnitř stringu</li>
+						</ul>
+
+						<aside class="notes">
+							Tohle je klíčové: encoding se řeší až
+							při vstupu/výstupu. Ne uvnitř programu.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🧠 <code>str</code> vs <code>bytes</code></h2>
+
+						<pre><code class="python" data-trim data-line-numbers>
+							s = "čau"
+							b = s.encode("utf-8")
+
+							print(s)        # text
+							print(b)        # bajty
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>str</code> = znaky</li>
+							<li class="fragment"><code>bytes</code> = čísla 0–255</li>
+							<li class="fragment">encode / decode je hranice</li>
+						</ul>
+
+						<aside class="notes">
+							Tady je dobré říct:
+							text patří lidem, bajty patří počítači.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🔁 Encode vs Decode</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|3|4|">
+							text = "žluťoučký"
+
+							data = text.encode("utf-8") # b'\xc5\xbelu\xc5\xa5ou\xc4\x8dk\xc3\xbd'
+							text2 = data.decode("utf-8") # žluťoučký
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>encode</code>: str → bytes</li>
+							<li class="fragment"><code>decode</code>: bytes → str</li>
+						</ul>
+
+						<aside class="notes">
+							Tady je dobré to drilovat.
+							Většina chyb je otočený směr.
+						</aside>
+					</section>
+
+					<section>
+						<h2 class="r-fit-text">🧵 String jako sekvence znaků</h2>
+
+						<p>
+							V Pythonu je <code>str</code> <strong>sekvence znaků</strong>.
+						</p>
+
+						<ul>
+							<li class="fragment">má délku (<code>len()</code>)</li>
+							<li class="fragment">lze indexovat</li>
+							<li class="fragment">lze řezat (slicing)</li>
+						</ul>
+
+						<aside class="notes">
+							Zdůraznit, že string není „magický text“,
+							ale normální sekvence jako list.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🔢 Indexování stringu</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|3|4|5|">
+							text = "Python"
+
+							print(text[0])   # P
+							print(text[1])   # y
+							print(text[5])   # n
+						</code></pre>
+
+						<ul>
+							<li class="fragment">indexy začínají od <strong>0</strong></li>
+							<li class="fragment">poslední znak má index <code>len(text) - 1</code></li>
+						</ul>
+
+						<aside class="notes">
+							Tady je dobré to říct natvrdo:
+							žádné „od jedničky“ – nula je základ.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🔙 Záporné indexy</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|3|4|">
+							text = "Python"
+
+							print(text[-1])  # n
+							print(text[-2])  # o
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>-1</code> = poslední znak</li>
+							<li class="fragment">praktické a čitelné</li>
+						</ul>
+
+						<aside class="notes">
+							Záporné indexy jsou ergonomie Pythonu.
+							Není nutné pořád psát len().
+						</aside>
+					</section>
+
+					<section>
+						<h2>🚫 String je immutable</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|">
+							text = "Python"
+							text[0] = "J"
+						</code></pre>
+
+						<p class="fragment">
+							❌ <code>TypeError</code>
+						</p>
+
+						<ul>
+							<li class="fragment">string nelze měnit na místě</li>
+							<li class="fragment">vždy vzniká nový string</li>
+						</ul>
+
+						<aside class="notes">
+							Dobrý moment zmínit rozdíl oproti listu.
+							String je neměnný z historických a výkonových důvodů.
+						</aside>
+					</section>
+
+					<section>
+						<h2>✂️ Slicing stringu</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|3|4|5|">
+							text = "Python"
+
+							print(text[0:4])   # Pyth
+							print(text[2:])    # thon
+							print(text[:3])    # Pyt
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>start</code> je včetně</li>
+							<li class="fragment"><code>end</code> je <strong>exkluzivní</strong></li>
+						</ul>
+
+						<aside class="notes">
+							Exclusive end je klíčová myšlenka.
+							Když tohle pochopí, zbytek zapadne.
+						</aside>
+					</section>
+
+					<section>
+						<h2>🔀 Slicing + záporné indexy</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|3|4|">
+							text = "Python"
+
+							print(text[:-1])   # Pytho
+							print(text[-3:])   # hon
+						</code></pre>
+
+						<ul>
+							<li class="fragment">velmi čitelné</li>
+							<li class="fragment">bez počítání délky</li>
+						</ul>
+
+						<aside class="notes">
+							Tady je dobré ukázat, že Python se snaží
+							psaní zjednodušit, ne ztížit.
+						</aside>
+					</section>
+
+					<section>
+						<h2>⏭️ Slicing s krokem</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|3|4|">
+							text = "Python"
+
+							print(text[::2])    # Pto
+							print(text[::-1])   # nohtyP
+						</code></pre>
+
+						<ul>
+							<li class="fragment"><code>step</code> = krok</li>
+							<li class="fragment">záporný krok = obrácení</li>
+						</ul>
+
+						<aside class="notes">
+							Otočení stringu jedním zápisem je typická
+							pythoní specialita.
+						</aside>
+					</section>
+
+					<section>
+						<h2>⚠️ IndexError</h2>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|">
+							text = "Python"
+							print(text[10]) # IndexError: string index out of range
+						</code></pre>
+
+						<ul>
+							<li class="fragment">index mimo rozsah</li>
+							<li class="fragment">slicing je bezpečný</li>
+						</ul>
+
+						<aside class="notes">
+							Důležitý rozdíl:
+							indexování padá, slicing nikdy.
+						</aside>
+					</section>
+				</section>
+
+
+				<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
 					<section>
 						<h2>📦 Kolekce</h2>
 
