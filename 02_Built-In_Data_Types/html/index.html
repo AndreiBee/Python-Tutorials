@@ -764,6 +764,192 @@
 							indexování padá, slicing nikdy.
 						</aside>
 					</section>
+
+					<section>
+						<h2>🧵 Formátování stringů v Pythonu</h2>
+						<p>Jak skládat text + proměnné čitelně a bezpečně</p>
+						<aside class="notes">
+							Dneska si ukážeme tři přístupy.
+							Historicky: %, potom format(), dnes správně f-strings.
+							V reálném světě používejte hlavně f-strings.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3>❌ Naivní spojování (nedělej tohle)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers>
+					name = "Andrej"
+					age = 30
+
+					msg = "Jmenuji se " + name + " a je mi " + str(age) + " let."
+					print(msg)
+						</code></pre>
+
+						<aside class="notes">
+							Tohle je stará škola.
+							Musíme ručně převádět čísla na string.
+							Je to nečitelné a snadno se v tom udělá chyba.
+							Hodí se maximálně pro rychlý hack, ale ne do produkce.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3>🧓 Starý styl: % operátor (C-like)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers>
+					name = "Andrej"
+					age = 30
+
+					msg = "Jmenuji se %s a je mi %d let." % (name, age)
+					print(msg)
+						</code></pre>
+
+						<aside class="notes">
+							Inspirace z C printf.
+							%s string, %d integer, %f float.
+							Funguje to, ale je to zastaralé.
+							Dnes už to prakticky nikdo nepíše v novém kódu.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3>⚙️ str.format()</h3>
+
+						<pre><code class="python" data-trim data-line-numbers>
+					name = "Andrej"
+					age = 30
+
+					msg = "Jmenuji se {} a je mi {} let.".format(name, age)
+					print(msg)
+						</code></pre>
+
+						<aside class="notes">
+							Modernější než %.
+							Čitelnější, flexibilnější.
+							Dlouho to byl standard před Pythonem 3.6.
+							Stále ho najdete ve starších projektech.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3>🎯 Pojmenované argumenty</h3>
+
+						<pre><code class="python" data-trim data-line-numbers>
+					msg = "Jmenuji se {name} a je mi {age} let.".format(
+						name="Andrej",
+						age=30
+					)
+					print(msg)
+						</code></pre>
+
+						<aside class="notes">
+							Výhoda: nezáleží na pořadí.
+							Hodí se pro delší šablony nebo logování.
+							Ale pořád je to víc psaní než f-string.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3>🚀 f-strings (doporučený způsob)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers>
+					name = "Andrej"
+					age = 30
+
+					msg = f"Jmenuji se {name} a je mi {age} let."
+					print(msg)
+						</code></pre>
+
+						<aside class="notes">
+							Nejčistší a nejpřirozenější varianta.
+							Rychlejší výkonově.
+							Nejméně psaní.
+							Dnes je to de facto standard.
+							Pokud učím začátečníky, učím rovnou tohle.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3>🧠 Výrazy uvnitř f-stringu</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|4|5|6|">
+							a = 10
+							b = 5
+
+							print(f"Součet: {a + b}")
+							print(f"Dvojnásobek: {a * 2}")
+							print(f"Velkými: {'andrej'.upper()}")
+						</code></pre>
+
+						<aside class="notes">
+							Uvnitř {} může být libovolný Python výraz.
+							To je obrovská výhoda.
+							Nemusíme vytvářet pomocné proměnné.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3>🎨 Formátování čísel</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|3|4|5|">
+							price = 1234.56789
+
+							print(f"{price:.2f}")      # 2 desetinná místa
+							print(f"{price:10.2f}")    # zarovnání
+							print(f"{price:,}")        # oddělovače tisíců
+						</code></pre>
+
+						<aside class="notes">
+							.2f = dvě desetinná místa
+							šířka pole
+							čárky pro tisíce
+							Hodně užitečné třeba pro finance nebo reporty.
+						</aside>
+					</section>
+
+
+					<section>
+						<h3>🐞 Debug f-string (Python 3.8+)</h3>
+
+						<pre><code class="python" data-trim data-line-numbers="1|2|4|">
+							x = 42
+							y = 7
+
+							print(f"{x=}, {y=}, {x*y=}")
+						</code></pre>
+
+						<aside class="notes">
+							Super trik pro debugging.
+							Automaticky vypíše název i hodnotu.
+							Strašně šetří čas při ladění.
+						</aside>
+					</section>
+
+
+					<section>
+						<h2>✅ Doporučení z praxe</h2>
+						<ul>
+							<li>Nový kód → vždy f-strings</li>
+							<li>Starý projekt → můžeš narazit na format()</li>
+							<li>% styl už nepoužívat</li>
+						</ul>
+
+						<aside class="notes">
+							Držte se moderního stylu.
+							Čitelnost je důležitější než historická kompatibilita.
+							F-strings jsou dnes prostě správná cesta.
+						</aside>
+					</section>
+
+
 				</section>
 
 
