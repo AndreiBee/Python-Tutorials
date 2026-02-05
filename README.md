@@ -28,7 +28,7 @@ Na konci tohoto kurzu budete schopni:
 - Počítač (Windows, macOS nebo Linux)
 - Základní práci s počítačem (soubory, složky, psaní)
 
-> Installers
+> Installery
 >
 > - [Python](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe)
 > - [VS Code](https://code.visualstudio.com/download#)
@@ -36,6 +36,10 @@ Na konci tohoto kurzu budete schopni:
 > - [Eclipse Adoptium JDK 25](https://adoptium.net/download?link=https%3A%2F%2Fgithub.com%2Fadoptium%2Ftemurin25-binaries%2Freleases%2Fdownload%2Fjdk-25.0.1%252B8%2FOpenJDK25U-jdk_x64_windows_hotspot_25.0.1_8.msi&vendor=Adoptium)
 > - [Git](https://github.com/git-for-windows/git/releases/download/v2.52.0.windows.1/Git-2.52.0-64-bit.exe)
 > - [GitHub CLI](https://github.com/cli/cli/releases/download/v2.86.0/gh_2.86.0_windows_amd64.msi)
+
+> Užitečné nástroje
+> 
+> - [Reveal.js - Prezentace v HTML](https://revealjs.com/)
 
 ---
 
@@ -49,7 +53,7 @@ Na konci tohoto kurzu budete schopni:
 
 ## 📚 Struktura kurzu
 
-### [00. Úvod & Nastavení](00_Intro/00_Intro.pdf)
+### [00. Úvod & Nastavení ✅](00_Intro/00_Intro.pdf)
 
 📂 Složka: `00_Intro`
 
