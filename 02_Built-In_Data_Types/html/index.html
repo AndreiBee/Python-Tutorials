@@ -231,6 +231,65 @@
 					</aside>
 					</section>
 
+					<section data-auto-animate>
+						<h2 class="r-fit-text">🧱 Úplný základ: informace v počítači</h2>
+
+						<div class="r-hstack justify-center">
+							<div data-id="box1" style="background: #808080; width: 80px; height: 80px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+							<div data-id="box1" style="background: #808080; width: 80px; height: 80px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+							<div data-id="box1" style="background: #808080; width: 80px; height: 80px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+							<div data-id="box1" style="background: #808080; width: 80px; height: 80px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+							<div data-id="box1" style="background: #808080; width: 80px; height: 80px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+							<div data-id="box1" style="background: #808080; width: 80px; height: 80px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+							<div data-id="box1" style="background: #808080; width: 80px; height: 80px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+							<div data-id="box1" style="background: #808080; width: 80px; height: 80px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+						</div>
+
+					</section>
+
+					<section data-auto-animate>
+						<h2 class="r-fit-text">🧱 Úplný základ: informace v počítači</h2>
+
+						<div class="r-hstack justify-center">
+							<div data-id="box1" style="background: #F5B027; width: 120px; height: 120px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+						</div>
+
+					</section>
+
+					<section data-auto-animate>
+						<h2 class="r-fit-text">🧱 Úplný základ: informace v počítači</h2>
+
+						<div class="r-hstack justify-center">
+							<div data-id="box1" style="background: #F5B027; width: 120px; height: 120px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+						</div>
+
+					<div data-id="content">
+						<p>
+						1 byte
+						</p>
+					</div>
+					</section>
+
+					<section data-auto-animate>
+						<h2 class="r-fit-text">🧱 Úplný základ: informace v počítači</h2>
+
+						<div class="r-hstack justify-center">
+							<div data-id="box1" style="background: #F5B027; width: 120px; height: 120px; margin: 5px; border-radius: 5px; border-style: solid; border-color: coral; border-width: 4px;"></div>
+						</div>
+
+					<div data-id="content">
+						<p>
+						1 byte
+						</p>
+					</div>
+
+					<div data-id="content">
+						<p class="r-fit-text">
+                        16 GB = 16 * 1024 MB = 16'384 * 1024 kB = 16'777'216 * 1024 =<br><b>17'179'869'184 byte</b>
+						</p>
+					</div>
+					</section>
+
 					<!-- SLIDE 9 -->
 					<section data-auto-animate>
 					<h2>🧠 A kde je v tom bool?</h2>
@@ -2050,40 +2109,649 @@
 					data-background-opacity="0.1" 
 					data-background-transition="zoom"
 					>
-					<section>
-						<h3><code>dict</code> - slovník</h3>
+                    <!-- ================================================= -->
+                    <!-- DICT (SLOVNÍK)                                   -->
+                    <!-- ================================================= -->
 
-						<pre><code class="python" data-trim data-line-numbers="1|2|3|4|6|">
-							user = {
-								"name": "Alice",
-								"age": 30
-							}
+                    <!-- SLIDE 1 -->
+                    <section data-auto-animate>
+                    <h2>📘 dict (slovník)</h2>
 
-							print(user["name"]) # Alice
-						</code></pre>
+                    <div data-id="content">
+                        <p style="font-size:1.7em;">
+                        mapování<br>klíč → hodnota
+                        </p>
+                    </div>
+                    </section>
 
-						<aside class="notes">
-							Dict je extrémně důležitý.
-							Základ JSONu, konfigurací, API.
-						</aside>
-					</section>
-					
-					<section>
-						<h2>🔁 Pravda a nepravda</h2>
 
-						<pre><code class="python" data-trim data-line-numbers>
-							if []:
-								print("pravda")
-							else:
-								print("nepravda")
-						</code></pre>
+                    <!-- SLIDE 2 -->
+                    <section data-auto-animate>
+                    <h2>📘 dict (slovník)</h2>
 
-						<aside class="notes">
-							Tady vysvětli truthy / falsy hodnoty.
-							Prázdné kolekce = False.
-						</aside>
-					</section>
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    user = {
+                        "name": "Anna",
+                        "age": 25,
+                        "admin": True
+                    }
+                        </code></pre>
+                    </div>
+                    </section>
 
+
+                    <!-- SLIDE 3 -->
+                    <section data-auto-animate>
+                    <h2>🧠 Co je dict uvnitř?</h2>
+
+                    <div data-id="content">
+                        <p style="font-size:1.6em;">
+                        Hash tabulka (hash table)
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 4 -->
+                    <section data-auto-animate>
+                    <h2>🧠 Co to znamená?</h2>
+
+                    <div data-id="content">
+                        <pre><code data-trim>
+                    lookup   → O(1)
+                    insert   → O(1)
+                    delete   → O(1)
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    Stejný princip jako set.
+                    Hash → index → hotovo.
+                    Žádné lineární hledání.
+                    </aside>
+                    </section>
+
+
+                    <!-- SLIDE 5 -->
+                    <section data-auto-animate>
+                    <h2>✅ Základní operace</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    user["name"]
+                    user["age"] = 26
+                    del user["admin"]
+                    len(user)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 6 -->
+                    <section data-auto-animate>
+                    <h2>⚡ Proč je dict tak důležitý?</h2>
+
+                    <div data-id="content">
+                        <p>
+                        přístup podle klíče je mnohem rychlejší<br>
+                        než hledání v listu
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 7 -->
+                    <section data-auto-animate>
+                    <h2>❌ Špatně (pomalé)</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    users = [
+                        ("anna", 25),
+                        ("bob", 30)
+                    ]
+
+                    for name, age in users:
+                        if name == "bob":
+                            print(age)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 8 -->
+                    <section data-auto-animate>
+                    <h2>✅ Správně</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    users = {
+                        "anna": 25,
+                        "bob": 30
+                    }
+
+                    print(users["bob"])
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 9 -->
+                    <section data-auto-animate>
+                    <h2>🆕 Pořadí v dictu</h2>
+
+                    <div data-id="content">
+                        <p>
+                        Python 3.7+ zachovává pořadí vložení
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 10 -->
+                    <section data-auto-animate>
+                    <h2>🆕 Pořadí v dictu</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    d = {}
+
+                    d["a"] = 1
+                    d["b"] = 2
+                    d["c"] = 3
+
+                    print(d)
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    Dřív to nebylo garantované.
+                    Dneska se na to můžeš spolehnout.
+                    Proto dict často nahrazuje list+set kombinaci.
+                    </aside>
+                    </section>
+
+
+                    <!-- SLIDE 11 -->
+                    <section data-auto-animate>
+                    <h2>🔁 Iterace</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    for key in d:
+                        ...
+
+                    for value in d.values():
+                        ...
+
+                    for k, v in d.items():
+                        ...
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 12 -->
+                    <section data-auto-animate>
+                    <h2>⚠️ Pozor na KeyError</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    age = users["petr"]
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 13 -->
+                    <section data-auto-animate>
+                    <h2>✅ Bezpečněji</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    age = users.get("petr", 0)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 14 -->
+                    <section data-auto-animate>
+                    <h2>💡 Užitečné metody</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    d.get(key)
+                    d.setdefault(key, value)
+                    d.update(other)
+                    d.pop(key)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 15 -->
+                    <section data-auto-animate>
+                    <h2>⚠️ Omezení</h2>
+
+                    <div data-id="content">
+                        <p style="font-size:1.5em;">
+                        klíče musí být hashovatelné (immutable)
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 16 -->
+                    <section data-auto-animate>
+                    <h2>⚠️ Co funguje / nefunguje</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    {"a": 1}        # OK
+                    {(1,2): 3}      # OK
+                    {[1,2]: 3}      # ❌
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 17 -->
+                    <section data-auto-animate>
+                    <h2>💡 Typické použití v praxi</h2>
+
+                    <div data-id="content">
+                        <ul style="font-size:1.4em;">
+                        <li>JSON data</li>
+                        <li>konfigurace</li>
+                        <li>počítání výskytů</li>
+                        <li>cache</li>
+                        <li>indexování objektů podle ID</li>
+                        </ul>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 18 -->
+                    <section data-auto-animate>
+                    <h2>📊 Počítání výskytů (klasika)</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    counts = {}
+
+                    for word in words:
+                        counts[word] = counts.get(word, 0) + 1
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 19 -->
+                    <section data-auto-animate>
+                    <h2>📚 Shrnutí</h2>
+
+                    <div data-id="content">
+                        <ul style="font-size:1.4em;">
+                        <li>dict = klíč → hodnota</li>
+                        <li>velmi rychlé vyhledávání</li>
+                        <li>zachovává pořadí</li>
+                        <li>nejpoužívanější struktura v Pythonu</li>
+                        <li>klíče musí být immutable</li>
+                        </ul>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 20 -->
+                    <section>
+                    <h2>💬 Praktické pravidlo</h2>
+
+                    <p>
+                        Když hledáš podle <b>jména</b>, <b>ID</b> nebo <b>klíče</b> → <b>dict</b>.<br><br>
+                        Pokud používáš list a ručně hledáš hodnotu,<br>
+                        pravděpodobně používáš špatnou strukturu.
+                    </p>
+                    </section>
+
+                </section>
+
+				<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
+                    <!-- ================================================= -->
+                    <!-- ENUMS                                             -->
+                    <!-- ================================================= -->
+
+                    <!-- SLIDE 1 -->
+                    <section data-auto-animate>
+                    <h2>🔢 Enum (enumeration)</h2>
+
+                    <div data-id="content">
+                        <p style="font-size:1.7em;">
+                        pojmenované konstanty místo „magických čísel“
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 2 -->
+                    <section data-auto-animate>
+                    <h2>❌ Problém bez enumu</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    camera_type = 2
+                    event = 7
+
+                    if camera_type == 2:
+                        ...
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    Co je 2? USB? CCD? CMOS?
+                    Nikdo to za týden nebude vědět.
+                    </aside>
+                    </section>
+
+
+                    <!-- SLIDE 3 -->
+                    <section data-auto-animate>
+                    <h2>❌ Problém bez enumu</h2>
+
+                    <div data-id="content">
+                        <p style="font-size:1.5em;">
+                        ❓ 2 znamená co?<br>
+                        ❓ 7 znamená co?<br><br>
+                        nečitelné, křehké, plné bugů
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 4 -->
+                    <section data-auto-animate>
+                    <h2>✅ Řešení: Enum</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    from enum import Enum
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 5 -->
+                    <section data-auto-animate>
+                    <h2>✅ Definice enumu</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    from enum import Enum
+
+                    class CameraType(Enum):
+                        CCD = 1
+                        CMOS = 2
+                        SIMULATOR = 3
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 6 -->
+                    <section data-auto-animate>
+                    <h2>✅ Použití</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    camera = CameraType.CMOS
+
+                    if camera == CameraType.CMOS:
+                        print("CMOS camera")
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    Kód je okamžitě čitelný.
+                    Žádné hádání.
+                    </aside>
+                    </section>
+
+
+                    <!-- SLIDE 7 -->
+                    <section data-auto-animate>
+                    <h2>🧠 Co je Enum uvnitř?</h2>
+
+                    <div data-id="content">
+                        <p style="font-size:1.5em;">
+                        normální třída + singleton objekty
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 8 -->
+                    <section data-auto-animate>
+                    <h2>🧠 Enum není jen číslo</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    print(CameraType.CMOS)
+                    print(CameraType.CMOS.name)
+                    print(CameraType.CMOS.value)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 9 -->
+                    <section data-auto-animate>
+                    <h2>🧠 Výstup</h2>
+
+                    <div data-id="content">
+                        <pre><code data-trim>
+                    CameraType.CMOS
+                    CMOS
+                    2
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- CAMERA EXAMPLE                                    -->
+                    <!-- ================================================= -->
+
+                    <!-- SLIDE 10 -->
+                    <section data-auto-animate>
+                    <h2>📷 Příklad: typy kamer</h2>
+
+                    <div data-id="content">
+                        <p style="font-size:1.6em;">
+                        reálný use-case z praxe
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 11 -->
+                    <section data-auto-animate>
+                    <h2>📷 CameraType</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    class CameraType(Enum):
+                        CCD = 1
+                        CMOS = 2
+                        USB = 3
+                        NETWORK = 4
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 12 -->
+                    <section data-auto-animate>
+                    <h2>📷 Použití v aplikaci</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    def init_camera(cam_type: CameraType):
+                        if cam_type == CameraType.CCD:
+                            init_ccd()
+                        elif cam_type == CameraType.CMOS:
+                            init_cmos()
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- GUI EVENTS                                        -->
+                    <!-- ================================================= -->
+
+                    <!-- SLIDE 13 -->
+                    <section data-auto-animate>
+                    <h2>🖱️ Příklad: GUI eventy</h2>
+
+                    <div data-id="content">
+                        <p style="font-size:1.6em;">
+                        místo stringů nebo čísel
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 14 -->
+                    <section data-auto-animate>
+                    <h2>❌ Špatně</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    if event == "click":
+                    if event == "CLICK":
+                    if event == "clik":
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    překlepy → runtime bug
+                    žádná kontrola typů
+                    </aside>
+                    </section>
+
+
+                    <!-- SLIDE 15 -->
+                    <section data-auto-animate>
+                    <h2>✅ Event enum</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    class EventType(Enum):
+                        CLICK = 1
+                        DOUBLE_CLICK = 2
+                        KEY_PRESS = 3
+                        WINDOW_CLOSE = 4
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 16 -->
+                    <section data-auto-animate>
+                    <h2>✅ Použití</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    def handle_event(event: EventType):
+                        if event == EventType.CLICK:
+                            ...
+                        elif event == EventType.KEY_PRESS:
+                            ...
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- POKROČILÉ                                         -->
+                    <!-- ================================================= -->
+
+                    <!-- SLIDE 17 -->
+                    <section data-auto-animate>
+                    <h2>⚡ Auto hodnoty</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    from enum import auto
+
+                    class State(Enum):
+                        IDLE = auto()
+                        RUNNING = auto()
+                        STOPPED = auto()
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 18 -->
+                    <section data-auto-animate>
+                    <h2>⚡ IntEnum</h2>
+
+                    <div data-id="content">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    from enum import IntEnum
+
+                    class ErrorCode(IntEnum):
+                        OK = 0
+                        FAIL = 1
+                        TIMEOUT = 2
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    Když potřebuješ kompatibilitu s čísly nebo C API.
+                    Chová se jako int.
+                    </aside>
+                    </section>
+
+
+                    <!-- SLIDE 19 -->
+                    <section data-auto-animate>
+                    <h2>📚 Shrnutí</h2>
+
+                    <div data-id="content">
+                        <ul style="font-size:1.4em;">
+                        <li>žádná magická čísla</li>
+                        <li>lepší čitelnost</li>
+                        <li>méně bugů</li>
+                        <li>lepší autocomplete</li>
+                        <li>ideální pro stavy, typy, eventy</li>
+                        </ul>
+                    </div>
+                    </section>
+
+
+                    <!-- SLIDE 20 -->
+                    <section>
+                    <h2>💬 Praktické pravidlo</h2>
+
+                    <p>
+                        Pokud máš pevný seznam možností<br>
+                        → použij IntEnum.
+                    </p>
+                    </section>
+
+                </section>
+				<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
 					<section>
 						<h2>🧠 Zajímavosti na závěr</h2>
 
