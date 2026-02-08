@@ -46,6 +46,7 @@ Na konci tohoto kurzu budete schopni:
 > - [Reveal.js - Prezentace v HTML](https://revealjs.com/)
 > - Neovim
 >> - winget install Neovim.Neovim
+>> - [Neovim Configuration](https://github.com/AndreiBee/nvim)
 ---
 
 ## 🛠 Použité nástroje
