@@ -45,7 +45,7 @@ Na konci tohoto kurzu budete schopni:
 > 
 > - [Python Tutor](https://pythontutor.com/visualize.html#)
 > - [Reveal.js - Prezentace v HTML](https://revealjs.com/)
-> - Neovim
+> - [Neovim](https://neovim.io/)
 >> - winget install Neovim.Neovim
 >> - [Neovim Configuration](https://github.com/AndreiBee/nvim)
 >
