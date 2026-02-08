@@ -759,6 +759,264 @@
 					data-background-opacity="0.1" 
 					data-background-transition="zoom"
 					>
+                    <!-- ================================================= -->
+                    <!-- MEMORY MODEL                                      -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2>🧠 Kolik místa zabírají typy v Pythonu?</h2>
+
+                    <div data-id="text">
+                        <p style="font-size:1.7em;">
+                        Spoiler: mnohem víc než čekáš
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>⚠️ Důležitý fakt</h2>
+
+                    <div data-id="text">
+                        <p style="font-size:1.5em;">
+                        V Pythonu je <b>všechno objekt</b>
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>⚠️ Důležitý fakt</h2>
+
+                    <div data-id="text">
+                        <ul style="font-size:1.3em;">
+                        <li>hodnota</li>
+                        <li>typ</li>
+                        <li>reference counter</li>
+                        <li>metadata</li>
+                        </ul>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- sys.getsizeof                                     -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2>🔍 Jak to změřit?</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    import sys
+
+                    sys.getsizeof(obj)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- BOOL                                              -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2>bool</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    import sys
+
+                    sys.getsizeof(True)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>bool</h2>
+
+                    <div data-id="code">
+                        <pre><code data-trim>
+                    28
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    28 bajtů za jednu hodnotu True/False.
+                    V C by to byl 1 bit nebo 1 byte.
+                    </aside>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- INT                                               -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2>int</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    sys.getsizeof(0)
+                    sys.getsizeof(123456)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>int</h2>
+
+                    <div data-id="code">
+                        <pre><code data-trim>
+                    28
+                    28
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    Python int není 32-bit.
+                    Je to big integer → dynamická velikost.
+                    Proto minimálně 28B.
+                    </aside>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>Velká čísla rostou</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    sys.getsizeof(10**30)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>Velká čísla rostou</h2>
+
+                    <div data-id="code">
+                        <pre><code data-trim>
+                    32 (nebo víc)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- FLOAT                                             -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2>float</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    sys.getsizeof(0.0)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>float</h2>
+
+                    <div data-id="code">
+                        <pre><code data-trim>
+                    24
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    float je C double (8B) + objektový overhead.
+                    </aside>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- STR                                               -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2>str</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    sys.getsizeof("")
+                    sys.getsizeof("a")
+                    sys.getsizeof("hello")
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>str</h2>
+
+                    <div data-id="code">
+                        <pre><code data-trim>
+                    49
+                    50
+                    54
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    obrovský overhead + znaky navíc
+                    </aside>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- TABULKA                                           -->
+                    <!-- ================================================= -->
+
+                    <section>
+                    <h2>📊 Přehled (64-bit CPython)</h2>
+
+                    <table style="font-size:1.2em;">
+                        <tr><th>typ</th><th>velikost</th></tr>
+                        <tr><td>bool</td><td>~28 B</td></tr>
+                        <tr><td>int</td><td>~28 B+</td></tr>
+                        <tr><td>float</td><td>~24 B</td></tr>
+                        <tr><td>empty str</td><td>~49 B</td></tr>
+                    </table>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- PRAKTICKÝ DOPAD                                   -->
+                    <!-- ================================================= -->
+
+                    <section>
+                    <h2>⚠️ Praktický dopad</h2>
+
+                    <ul style="font-size:1.3em;">
+                        <li>1 milion intů ≈ 28 MB</li>
+                        <li>Python není paměťově efektivní</li>
+                        <li>pro data → NumPy / array / C++</li>
+                    </ul>
+                    </section>
+
+
+                    <section>
+                    <h2>💬 Pravidlo z praxe</h2>
+
+                    <p style="font-size:1.5em;">
+                        malý počet hodnot → Python ok<br><br>
+                        miliony pixelů / čísel → použij NumPy nebo C++
+                    </p>
+                    </section>
+
+                </section>
+
+				<section 
+					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
+					data-background-opacity="0.1" 
+					data-background-transition="zoom"
+					>
 					<section>
 						<h2>🔤 Textový typ</h2>
 						<h3><code>str</code></h3>
@@ -2742,32 +3000,245 @@
 
                     <p>
                         Pokud máš pevný seznam možností<br>
-                        → použij IntEnum.
+                        → použij Enum.
                     </p>
                     </section>
 
                 </section>
+
 				<section 
 					data-background-gradient="linear-gradient(to bottom, #0f172a, #020617)"
 					data-background-opacity="0.1" 
 					data-background-transition="zoom"
 					>
-					<section>
-						<h2>🧠 Zajímavosti na závěr</h2>
 
-						<ul>
-							<li class="fragment">Všechno je objekt</li>
-							<li class="fragment">Typ zjistíš pomocí <code>type()</code></li>
-							<li class="fragment">Python typy kontroluje za běhu</li>
-						</ul>
+                    <!-- ================================================= -->
+                    <!-- OVERVIEW                                          -->
+                    <!-- ================================================= -->
 
-						<aside class="notes">
-							Uzavři to tím, že datové typy nejsou detail.
-							Jsou základ správného programování.
-						</aside>
-					</section>
+                    <section data-auto-animate>
+                    <h2>🧠 Jaké datové typy kde použít?</h2>
 
-				</section>
+                    <div data-id="t">
+                        <p style="font-size:1.7em;">
+                        Python ≠ C++
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>Realita</h2>
+
+                    <div data-id="t">
+                        <p>
+                        Python objekty jsou velké a pomalé.<br>
+                        Hardware + data = potřebuješ efektivitu.
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>Zlaté pravidlo</h2>
+
+                    <div data-id="t">
+                        <p style="font-size:1.6em;">
+                        logika → Python<br>
+                        data → NumPy / array / C++
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- CAMERA CONTROL                                    -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2>📷 Kamery – řízení zařízení</h2>
+
+                    <div data-id="code">
+                        <p style="font-size:1.4em;">
+                        malé množství hodnot, stavy, konfigurace
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>✅ Používej</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    Enum          # typ kamery, mód
+                    bool          # zap/vyp
+                    int           # expoziční čas, gain
+                    dict          # config
+                    dataclass     # struktury nastavení
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>❌ Nepoužívej</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim>
+                    list milionů hodnot
+                    string "magic constants"
+                        </code></pre>
+                    </div>
+
+                    <aside class="notes">
+                    Řízení je logika, ne data. Tady je Python doma.
+                    </aside>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- IMAGE PROCESSING                                  -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2>🖼️ Image processing</h2>
+
+                    <div data-id="text">
+                        <p style="font-size:1.6em;">
+                        miliony pixelů = miliony čísel
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>❌ Špatně (čistý Python)</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    pixels = [[0]*1920 for _ in range(1080)]
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>Proč je to špatně?</h2>
+
+                    <div data-id="text">
+                        <ul>
+                        <li>každý pixel = Python int (~28 B)</li>
+                        <li>obrovská RAM</li>
+                        <li>pomalé cache</li>
+                        <li>žádný SIMD (Single Instruction, Multiple Data)</li>
+                        </ul>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>✅ Správně</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    import numpy as np
+
+                    img = np.zeros((1080, 1920), dtype=np.uint8)
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>Výhody NumPy</h2>
+
+                    <div data-id="text">
+                        <ul style="font-size:1.1em;">
+                        <li class="fragment">✅ 1 pixel = 1 byte (záleží na datovém typu)</li>
+                        <li class="fragment">✅ kontinuální paměť</li>
+                        <li class="fragment">✅ C rychlost</li>
+                        <li class="fragment">✅ OpenCV kompatibilita</li>
+                        </ul>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- STAGE MOTORS                                      -->
+                    <!-- ================================================= -->
+
+                    <section data-auto-animate>
+                    <h2 class="r-fit-text">⚙️ Stage / motory / hardware</h2>
+
+                    <div data-id="text">
+                        <p style="font-size:1.5em;">
+                        stavy + fronty příkazů + telemetrie
+                        </p>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>✅ Používej</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    Enum        # stav motoru
+                    float       # pozice
+                    tuple       # (x, y, z)
+                    deque       # fronta příkazů (double-ended queue (oboustranná fronta))
+                    dataclass   # struktura stavu
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                    <h2>Příklad</h2>
+
+                    <div data-id="code">
+                        <pre><code class="python" data-trim data-line-numbers>
+                    class StageState(Enum):
+                        IDLE = 0
+                        MOVING = 1
+                        ERROR = 2
+
+                    position: tuple[float, float, float]
+                        </code></pre>
+                    </div>
+                    </section>
+
+
+                    <!-- ================================================= -->
+                    <!-- SUMMARY TABLE                                     -->
+                    <!-- ================================================= -->
+
+                    <section>
+                    <h2>📊 Rychlá mapa rozhodování</h2>
+
+                    <table style="font-size:1.1em;">
+                        <tr><th>situace</th><th>typ</th></tr>
+                        <tr><td>stavy / módy</td><td>Enum</td></tr>
+                        <tr><td>konfigurace</td><td>dict / dataclass</td></tr>
+                        <tr><td>malé kolekce</td><td>list / tuple</td></tr>
+                        <tr><td>unikátní hodnoty</td><td>set</td></tr>
+                        <tr><td>pixely / signály</td><td>NumPy array</td></tr>
+                        <tr><td>max výkon</td><td>C++ / C extension</td></tr>
+                    </table>
+                    </section>
+
+
+                    <section>
+                    <h2>💬 Praktická filozofie</h2>
+
+                    <p style="font-size:1.5em;">
+                        Python je dirigent orchestru.<br>
+                        Těžkou práci ať dělá C/NumPy.
+                    </p>
+                    </section>
+
+                </section>
 
 				<div class="footer">
 					<span>Andrej Pčelovodov</span>
