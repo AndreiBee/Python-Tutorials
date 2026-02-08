@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>03_Conditionals and Iteration</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			.reveal .footer {
+				position: fixed;
+				bottom: 0%;
+				left: 2%;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				font-size: 0.4em;
+				color: #94a3b8; /* jemná šedá */
+
+				opacity: 0.85;
+				z-index: 20;
+			
+				pointer-events: auto;
+			}
+
+			.reveal .footer a {
+				pointer-events: auto;
+			}
+
+			.reveal .footer img {
+				height: 28px;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
+                        <!-- ===================== TITLE ===================== -->
+                        <section>
+                        <h1 class="r-fit-text">Conditionals & Iteration</h1>
+                        <h3>Řízení toku programu v Pythonu</h3>
+                        <p class="fragment">if • match • for • while • itertools</p>
+                        <aside class="notes">
+                            Dnes projdeme základní stavební kameny každého programu.
+                            Bez podmínek a cyklů by Python byl jen kalkulačka.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== WHY ===================== -->
+                        <section>
+                        <h2>Proč je to důležité?</h2>
+                        <ul>
+                            <li class="fragment">Rozhodování (podmínky)</li>
+                            <li class="fragment">Opakování práce (cykly)</li>
+                            <li class="fragment">Čistý a čitelný kód</li>
+                        </ul>
+                        <aside class="notes">
+                            V reálném světě většina logiky je jen kombinace těchto dvou věcí.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== IF ===================== -->
+                        <section>
+                        <h2>if / elif / else</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        age = 18
+
+                        if age &gt;= 18:
+                            print("Dospělý")
+                        elif age &gt;= 15:
+                            print("Téměř")
+                        else:
+                            print("Dítě")
+                        </code></pre>
+                        <aside class="notes">
+                            Klasická větev. Python používá odsazení, žádné závorky.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== NESTED ===================== -->
+                        <section>
+                        <h2 class="r-fit-text">Vnořené podmínky (nested if)</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        if user_logged:
+                            if is_admin:
+                                print("Admin panel")
+                        </code></pre>
+                        <p class="fragment">👉 raději zjednodušovat a používat guard clauses</p>
+                        <aside class="notes">
+                            Moc vnoření = špatná čitelnost. Staré pravidlo: raději dříve vrátit.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== TERNARY ===================== -->
+                        <section>
+                        <h2>Ternární operátor</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        status = "OK" if value &gt; 0 else "FAIL"
+                        </code></pre>
+                        <p class="fragment small">Používat jen pro jednoduché výrazy</p>
+                        <aside class="notes">
+                            Pokud je to delší než jeden řádek, vraťte se k normálnímu if.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== MATCH ===================== -->
+                        <section>
+                        <h2>Pattern Matching (match)</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        cmd = "start"
+
+                        match cmd:
+                            case "start":
+                                run()
+                            case "stop":
+                                stop()
+                            case _:
+                                print("Unknown")
+                        </code></pre>
+                        <aside class="notes">
+                            Moderní náhrada switch-case. Přehlednější pro více možností.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== FOR BASICS ===================== -->
+                        <section>
+                        <h2>for cyklus</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        for i in range(5):
+                            print(i)
+                        </code></pre>
+                        <aside class="notes">
+                            Python iteruje přes objekty, ne přes indexy jako C++.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== RANGE ===================== -->
+                        <section>
+                        <h2>range()</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        range(5)        # 0..4
+                        range(1, 5)     # 1..4
+                        range(0, 10, 2) # krok 2
+                        </code></pre>
+                        <aside class="notes">
+                            range je lazy – negeneruje celý seznam.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== SEQUENCE ===================== -->
+                        <section>
+                        <h2>Iterace přes sekvenci</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        for name in ["Alice", "Bob", "Eve"]:
+                            print(name)
+                        </code></pre>
+                        <aside class="notes">
+                            Typický pythoní styl – přímo hodnoty, žádné indexy.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== ITERABLE ===================== -->
+                        <section>
+                        <h2>Iterable vs Iterator</h2>
+                        <div class="box">
+                            <ul>
+                            <li class="fragment">Iterable → lze projít (list, str, dict)</li>
+                            <li class="fragment">Iterator → má __next__()</li>
+                            </ul>
+                        </div>
+                        <aside class="notes">
+                            Důležité pro pochopení, proč for funguje na tolika věcech.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== MULTIPLE ===================== -->
+                        <section>
+                        <h2>Více sekvencí najednou</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        names = ["A", "B"]
+                        scores = [10, 20]
+
+                        for n, s in zip(names, scores):
+                            print(n, s)
+                        </code></pre>
+                        <aside class="notes">
+                            zip je klasický nástroj. Jednoduchý a bezpečný.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== WHILE ===================== -->
+                        <section>
+                        <h2>while cyklus</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        i = 0
+                        while i &lt; 5:
+                            print(i)
+                            i += 1
+                        </code></pre>
+                        <aside class="notes">
+                            Používat když neznáme počet iterací předem.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== BREAK CONTINUE ===================== -->
+                        <section>
+                        <h2>break & continue</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        for x in data:
+                            if x == 0:
+                                continue
+                            if x &lt; 0:
+                                break
+                        </code></pre>
+                        <aside class="notes">
+                            break končí, continue přeskočí iteraci.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== ELSE FOR ===================== -->
+                        <section>
+                        <h2>else u for/while</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        for x in nums:
+                            if x == 5:
+                                break
+                        else:
+                            print("nenalezeno")
+                        </code></pre>
+                        <aside class="notes">
+                            else se spustí jen pokud nebyl break. Často neznámá fíčura.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== WALRUS ===================== -->
+                        <section>
+                        <h2>Walrus operátor :=</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        while (line := file.readline()):
+                            print(line)
+                        </code></pre>
+                        <aside class="notes">
+                            Užitečné pro čtení streamů. Ale nepřehánět – čitelnost je důležitější.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== ITERTOOLS ===================== -->
+                        <section>
+                        <h2>itertools</h2>
+                        <ul>
+                            <li class="fragment">chain</li>
+                            <li class="fragment">count</li>
+                            <li class="fragment">cycle</li>
+                            <li class="fragment">islice</li>
+                        </ul>
+                        <aside class="notes">
+                            Stará dobrá standardní knihovna. Extrémně efektivní, bez alokací.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== COMBINATORICS ===================== -->
+                        <section>
+                        <h2>Kombinatorické generátory</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        from itertools import permutations, combinations
+
+                        permutations([1,2,3])
+                        combinations([1,2,3], 2)
+                        </code></pre>
+                        <aside class="notes">
+                            Užitečné pro testování, brute-force, matematiku.
+                        </aside>
+                        </section>
+
+                        <!-- ===================== SUMMARY ===================== -->
+                        <section data-background-gradient="linear-gradient(135deg,#0f3057,#1f1f1f)">
+                        <h2>Shrnutí</h2>
+                        <ul>
+                            <li class="fragment">if / match → rozhodování</li>
+                            <li class="fragment">for / while → opakování</li>
+                            <li class="fragment">itertools → výkon a elegance</li>
+                        </ul>
+                        <aside class="notes">
+                            Tohle je absolutní základ. Kdo tohle ovládá, může psát seriózní programy.
+                        </aside>
+                        </section>
+	
+				</section>
+
+				<div class="footer">
+					<span>Andrej Pčelovodov</span>
+					<a href="https://arvion.cz" target="_blank">
+						<img src="https://arvion.cz/img/svg/logo-opt.svg" alt="Logo">
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="node_modules/reveal.js-copycode/plugin/copycode/copycode.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+			Reveal.configure({ pdfMaxPagesPerSlide: 1 });
+		</script>
+	</body>
+</html>

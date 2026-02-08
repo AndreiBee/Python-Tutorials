@@ -43,6 +43,7 @@ Na konci tohoto kurzu budete schopni:
 
 > Užitečné nástroje
 > 
+> - [Python Tutor](https://pythontutor.com/visualize.html#)
 > - [Reveal.js - Prezentace v HTML](https://revealjs.com/)
 > - Neovim
 >> - winget install Neovim.Neovim
@@ -74,3 +75,7 @@ Na konci tohoto kurzu budete schopni:
 ### [02. Built-In Data Types](02_Built-In_Data_Types/02_Built-In_Data_Types.pdf)
 
 📂 Složka: `02_Built-In_Data_Types`
+
+### [03. Conditionals and Iteration](03_Conditionals_and_Iteration/03_Conditionals_and_Iteration.pdf)
+
+📂 Složka: `03_Conditionals_and_Iteration`
