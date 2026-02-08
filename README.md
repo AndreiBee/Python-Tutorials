@@ -47,6 +47,10 @@ Na konci tohoto kurzu budete schopni:
 > - Neovim
 >> - winget install Neovim.Neovim
 >> - [Neovim Configuration](https://github.com/AndreiBee/nvim)
+>
+> Grafické editory
+> - [GIMP](https://download.gimp.org/gimp/v3.0/windows/gimp-3.0.8-setup-2.exe)
+> - [Inkscape](https://inkscape.org/release/inkscape-1.4.3/windows/64-bit/msi/dl/)
 ---
 
 ## 🛠 Použité nástroje
