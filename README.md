@@ -40,6 +40,7 @@ Na konci tohoto kurzu budete schopni:
 >
 > - [Git](https://github.com/git-for-windows/git/releases/download/v2.52.0.windows.1/Git-2.52.0-64-bit.exe)
 > - [GitHub CLI](https://github.com/cli/cli/releases/download/v2.86.0/gh_2.86.0_windows_amd64.msi)
+> - [Process Explorer](https://download.sysinternals.com/files/ProcessExplorer.zip)
 
 > Užitečné nástroje
 > 
@@ -67,6 +68,8 @@ Na konci tohoto kurzu budete schopni:
 ### [00. Úvod & Nastavení ✅](00_Intro/00_Intro.pdf)
 
 📂 Složka: `00_Intro`
+
+# Přednáška se uskutečnila 4. 2. 2026.
 
 ### [01. Virtuální Prostředí](01_Virtual_Environment/01_Virtual_Environment.pdf)
 
