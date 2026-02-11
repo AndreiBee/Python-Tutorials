@@ -75,7 +75,7 @@ Na konci tohoto kurzu budete schopni:
 
 📂 Složka: `01_Virtual_Environment`
 
-### [02. Built-In Data Types](02_Built-In_Data_Types/02_Built-In_Data_Types.pdf)
+### [02. Built-In Data Types ✅](02_Built-In_Data_Types/02_Built-In_Data_Types.pdf)
 
 📂 Složka: `02_Built-In_Data_Types`
 
