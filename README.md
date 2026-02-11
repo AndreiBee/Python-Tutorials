@@ -71,7 +71,7 @@ Na konci tohoto kurzu budete schopni:
 
 ##### Přednáška se uskutečnila `4.2.2026`.
 
-### [01. Virtuální Prostředí](01_Virtual_Environment/01_Virtual_Environment.pdf)
+### [01. Virtuální Prostředí ⚠️](01_Virtual_Environment/01_Virtual_Environment.pdf)
 
 📂 Složka: `01_Virtual_Environment`
 
