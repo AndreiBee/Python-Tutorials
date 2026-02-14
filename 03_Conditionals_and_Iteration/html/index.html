@@ -93,13 +93,19 @@
 
                         <!-- ===================== NESTED ===================== -->
                         <section>
-                        <h2 class="r-fit-text">Vnořené podmínky (nested if)</h2>
+                        <h2 class="r-fit-text">Vnořené podmínky (nested if) ↘️</h2>
                         <pre><code class="python" data-trim data-line-numbers>
                         if user_logged:
                             if is_admin:
                                 print("Admin panel")
                         </code></pre>
-                        <p class="fragment">👉 raději zjednodušovat a používat guard clauses</p>
+                        <p class="fragment">👉 raději zjednodušovat a používat <b>guard clauses</b></p>
+                        <pre class="fragment"><code class="python" data-trim data-line-numbers>
+                        if not user_logged and not is_admin:
+                            return
+
+                        print("Admin panel")
+                        </code></pre>
                         <aside class="notes">
                             Moc vnoření = špatná čitelnost. Staré pravidlo: raději dříve vrátit.
                         </aside>
@@ -111,7 +117,15 @@
                         <pre><code class="python" data-trim data-line-numbers>
                         status = "OK" if value &gt; 0 else "FAIL"
                         </code></pre>
+
+                        <pre class="fragment"><code class="python" data-trim data-line-numbers>
+                        n = -5
+
+                        res = "Positive" if n > 0 else "Negative" if n < 0 else "Zero"
+                        </code></pre>
+
                         <p class="fragment small">Používat jen pro jednoduché výrazy</p>
+
                         <aside class="notes">
                             Pokud je to delší než jeden řádek, vraťte se k normálnímu if.
                         </aside>
@@ -131,6 +145,17 @@
                             case _:
                                 print("Unknown")
                         </code></pre>
+
+                        <pre class="fragment"><code class="python" data-trim data-line-numbers>
+                        x = 20
+
+                        match x:
+                            case 10 | 20 | 30:  # Matches 10, 20, or 30
+                                print(f"Matched: {x}")
+                            case _:
+                                print("No match found")
+                        </code></pre>
+
                         <aside class="notes">
                             Moderní náhrada switch-case. Přehlednější pro více možností.
                         </aside>
@@ -138,20 +163,101 @@
 
                         <!-- ===================== FOR BASICS ===================== -->
                         <section>
-                        <h2>for cyklus</h2>
-                        <pre><code class="python" data-trim data-line-numbers>
-                        for i in range(5):
-                            print(i)
+                        <h2>for cyklus (list)</h2>
+
+                        <p class="r-fit-text">
+                        Pomocí smyčky for můžeme provést sadu příkazů, jednou pro každou položku v:<b><br>list<br>tuple<br>set atd.</b>
+                        </p>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|2|3|">
+                        fruits = ["apple", "banana", "cherry"]
+                        for x in fruits:
+                            print(x)
                         </code></pre>
-                        <aside class="notes">
-                            Python iteruje přes objekty, ne přes indexy jako C++.
-                        </aside>
+
+                        <p class="fragment small">✅</p>
+
+                        <pre class="fragment"><code class="python" data-trim data-line-numbers>
+                        for name in ["Alice", "Bob", "Eve"]:
+                            print(name)
+                        </code></pre>
+
+                        <p class="fragment small">🚫</p>
+                        </section>
+
+                        <section>
+                        <h2>for cyklus (string)</h2>
+
+                        <p class="r-fit-text">
+                        I řetězce jsou iterovatelné objekty (obsahují posloupnost znaků)
+                        </p>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|3|4|">
+                        fruit = "banana"
+
+                        for x in fruit:
+                            print(x)
+                        </code></pre>
+                        </section>
+
+                        <section>
+                        <h2>for cyklus (break)</h2>
+
+                        <p class="r-fit-text">
+                        Pomocí příkazu break můžeme smyčku zastavit dříve, než projde všemi položkami
+                        </p>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|">
+                        fruits = ["apple", "banana", "cherry"]
+                        for x in fruits:
+                            print(x)
+                            if x == "banana":
+                                break
+                        </code></pre>
+
+                        </section>
+
+                        <section>
+                        <h2>for cyklus (continue)</h2>
+
+                        <p class="r-fit-text">
+                        Pomocí příkazu continue můžeme zastavit aktuální iteraci smyčky a pokračovat další.
+                        </p>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|">
+                        fruits = ["apple", "banana", "cherry"]
+                        for x in fruits:
+                            if x == "banana":
+                                continue
+                            print(x)
+                        </code></pre>
+                        </section>
+
+
+                        <section>
+                        <h2>for cyklus (range)</h2>
+
+                        <p class="r-fit-text">
+                        Chcete-li provést smyčku přes sadu kódu určitý početkrát, můžete použít funkci range().<br>
+                        Funkce range() vrací posloupnost čísel, která začíná standardně od 0,<br>zvyšuje se o 1 (standardně) a končí u zadaného čísla.
+                        </p>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|2|">
+                        for x in range(6):
+                            print(x)
+                        </code></pre>
                         </section>
 
                         <!-- ===================== RANGE ===================== -->
                         <section>
                         <h2>range()</h2>
-                        <pre><code class="python" data-trim data-line-numbers>
+
+                        <p class="r-fit-text">
+                        Funkce range() má výchozí počáteční hodnotu 0,<br>ale je možné zadat počáteční hodnotu přidáním parametru:<br>range(1, 5), což znamená hodnoty od 1 do 5 (ale bez 5).<br><br>
+                        Funkce range() ve výchozím nastavení zvyšuje posloupnost o 1,<br>je však možné zadat hodnotu přírůstku přidáním třetího parametru: range(0, 10, 2):
+                        </p>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|2|3|">
                         range(5)        # 0..4
                         range(1, 5)     # 1..4
                         range(0, 10, 2) # krok 2
@@ -161,16 +267,75 @@
                         </aside>
                         </section>
 
-                        <!-- ===================== SEQUENCE ===================== -->
+
                         <section>
-                        <h2>Iterace přes sekvenci</h2>
-                        <pre><code class="python" data-trim data-line-numbers>
-                        for name in ["Alice", "Bob", "Eve"]:
-                            print(name)
+                        <h2>for cyklus (else)</h2>
+
+                        <p class="r-fit-text">
+                        Klíčové slovo else ve smyčce for určuje blok kódu, který se má provést po dokončení smyčky.<br><br>
+                        Blok else NEBUDE proveden, pokud je smyčka zastavena příkazem break.
+                        </p>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|2|3|4|5|">
+                        for x in range(6):
+                            if x == 3: break
+                            print(x)
+                        else:
+                            print("Finally finished!")
                         </code></pre>
-                        <aside class="notes">
-                            Typický pythoní styl – přímo hodnoty, žádné indexy.
-                        </aside>
+                        </section>
+
+                        <section>
+                        <h2>Vnořený for cyklus</h2>
+
+                        <p class="r-fit-text">
+                        Vnořená smyčka je smyčka uvnitř smyčky.<br>
+                        „Vnitřní smyčka“ se provede jednou za každou iteraci „vnější smyčky“:
+                        </p>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|2|4|5|6|">
+                        adj = ["red", "big", "tasty"]
+                        fruits = ["apple", "banana", "cherry"]
+
+                        for x in adj:
+                            for y in fruits:
+                                print(x, y)
+                        </code></pre>
+                        </section>
+
+                        <section>
+                        <h2>Pass</h2>
+                        <pre><code class="python" data-trim data-line-numbers="1|2|">
+                        for x in range(100):
+                            pass
+                        </code></pre>
+
+                        <p class="r-fit-text">
+                        Příkaz pass se používá jako zástupný symbol pro budoucí kód.<br>
+                        Při provedení příkazu pass se nic nestane,<br>ale zabráníte tak chybě, když není povolen prázdný kód.<br><br>
+                        Prázdný kód není povolen ve:<b><br>smyčkách<br>definicích funkcí<br>definicích tříd<br>v příkazech if</b>
+                        </p>
+                        </section>
+
+                        <section>
+                        <h2>Pass</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        def myfunction():
+                            pass
+                        </code></pre>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        class Person:
+                            pass
+                        </code></pre>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        a = 33
+                        b = 200
+
+                        if b > a:
+                            pass
+                        </code></pre>
                         </section>
 
                         <!-- ===================== ITERABLE ===================== -->
@@ -249,7 +414,8 @@
                         <!-- ===================== WALRUS ===================== -->
                         <section>
                         <h2>Walrus operátor :=</h2>
-                        <pre><code class="python" data-trim data-line-numbers>
+                        <img class="fragment" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F31%2Fce%2Fc7%2F31cec721f6d70db0602068fbebc2ed61.jpg&f=1&nofb=1&ipt=b3267eae45eb713e9e198a709e6319d6a7c333a29da1dbe2c32c00e57f4259da" style="border-radius: 50%; max-width: 40%;">
+                        <pre class="fragment"><code class="python" data-trim data-line-numbers>
                         while (line := file.readline()):
                             print(line)
                         </code></pre>
