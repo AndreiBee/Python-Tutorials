@@ -160,7 +160,12 @@
                             Moderní náhrada switch-case. Přehlednější pro více možností.
                         </aside>
                         </section>
+                </section>
 
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
                         <!-- ===================== FOR BASICS ===================== -->
                         <section>
                         <h2>for cyklus (list)</h2>
@@ -337,10 +342,131 @@
                             pass
                         </code></pre>
                         </section>
+                </section>
 
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
+
+                        <section>
+                        <h2>Smyčka While</h2>
+
+                        <p>Pomocí smyčky while můžeme provádět sadu příkazů, dokud je podmínka pravdivá.</p>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        i = 1
+                        while i < 6:
+                            print(i)
+                            i += 1
+                        </code></pre>
+
+                        <p class="r-fit-text">Smyčka while vyžaduje, aby byly připraveny příslušné proměnné.<br>V tomto příkladu musíme definovat indexovací proměnnou i, kterou nastavíme na hodnotu 1.</p>
+                        <p class="fragment">Poznámka: nezapomeňte zvyšovat hodnotu i,<br>jinak bude smyčka pokračovat donekonečna.</p>
+
+                        </section>
+
+                        <section>
+                        <h2>Smyčka While (break)</h2>
+
+                        <p>Pomocí příkazu break můžeme smyčku zastavit,<br>i když je podmínka while splněna.</p>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        i = 1
+                        while i < 6:
+                            print(i)
+                            if i == 3:
+                                break
+                            i += 1
+                        </code></pre>
+
+                        </section>
+
+                        <section>
+                        <h2>Smyčka While (continue)</h2>
+
+                        <p>Pomocí příkazu continue<br>můžeme zastavit aktuální iteraci a pokračovat další.</p>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        i = 0
+                        while i < 6:
+                            i += 1
+                            if i == 3:
+                                continue
+                            print(i)
+                        </code></pre>
+
+                        </section>
+
+                        <section>
+                        <h2>Smyčka While (else)</h2>
+
+                        <p>Pomocí příkazu else můžeme spustit blok kódu jednou, když podmínka již není splněna.</p>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        i = 1
+                        while i < 6:
+                            print(i)
+                            i += 1
+                        else:
+                            print("i is no longer less than 6")
+                        </code></pre>
+
+                        </section>
+                </section>
+
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
+                        <!-- ===================== WALRUS ===================== -->
+                        <section>
+                        <h2>Walrus operátor :=</h2>
+                        <div class="r-stack">
+                        <img class="fragment fade-out" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F31%2Fce%2Fc7%2F31cec721f6d70db0602068fbebc2ed61.jpg&f=1&nofb=1&ipt=b3267eae45eb713e9e198a709e6319d6a7c333a29da1dbe2c32c00e57f4259da" style="border-radius: 50%; max-width: 40%;">
+                        <pre class="fragment current-visible"><code class="python" data-trim data-line-numbers>
+                        while (line := file.readline()):
+                            print(line)
+                        </code></pre>
+
+                        <pre class="fragment"><code class="python" data-trim data-line-numbers>
+                        d = [
+                            {"userId": 1, "name": "rahul", "completed": False},
+                            {"userId": 1, "name": "rohit", "completed": False},
+                            {"userId": 1, "name": "ram", "completed": False},
+                            {"userId": 1, "name": "ravan", "completed": True}
+                        ]
+
+                        print("With Python 3.8 Walrus Operator:")
+                        for entry in d:
+                            if name := entry.get("name"):
+                                print(name)
+
+                        print("Without Walrus operator:")
+                        for entry in d:
+                            name = entry.get("name")
+                            if name:
+                                print(name)
+                        </code></pre>
+                        </div>
+
+                        <aside class="notes">
+                            Užitečné pro čtení streamů. Ale nepřehánět – čitelnost je důležitější.
+                        </aside>
+                        </section>
+                    </section>
+
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
                         <!-- ===================== ITERABLE ===================== -->
                         <section>
                         <h2>Iterable vs Iterator</h2>
+
+                        <p class="r-fit-text">Seznamy (list), tuple, slovníky (dict) a množiny (set) jsou všechny iterovatelné objekty.<br><br>Jedná se o iterovatelné kontejnery, ze kterých můžete získat iterátor.<br><br>
+                        Všechny tyto objekty mají metodu iter(), která se používá k získání iterátoru</p>
+
                         <div class="box">
                             <ul>
                             <li class="fragment">Iterable → lze projít (list, str, dict)</li>
@@ -350,6 +476,58 @@
                         <aside class="notes">
                             Důležité pro pochopení, proč for funguje na tolika věcech.
                         </aside>
+                        </section>
+
+                        <section>
+                        <h2>Iterable vs Iterator</h2>
+                        <pre><code class="python" data-trim data-line-numbers>
+                        mytuple = ("apple", "banana", "cherry")
+                        myit = iter(mytuple)
+
+                        print(next(myit))
+                        print(next(myit))
+                        print(next(myit))
+                        </code></pre>
+                        </section>
+
+
+                        <section>
+                        <h2>Iterable vs Iterator</h2>
+
+                        <p class="r-fit-text">I řetězce jsou iterovatelné objekty a mohou vracet iterátor</p>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        mystr = "banana"
+                        myit = iter(mystr)
+
+                        print(next(myit))
+                        print(next(myit))
+                        print(next(myit))
+                        print(next(myit))
+                        print(next(myit))
+                        print(next(myit))
+                        </code></pre>
+                        </section>
+
+                        <section>
+                        <h2>Procházení iterátorem</h2>
+
+                        <p class="r-fit-text">Můžeme také použít smyčku for k iterování přes iterovatelný objekt</p>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        mytuple = ("apple", "banana", "cherry")
+
+                        for x in mytuple:
+                            print(x)
+                        </code></pre>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        mystr = "banana"
+
+                        for x in mystr:
+                            print(x)
+                        </code></pre>
+
                         </section>
 
                         <!-- ===================== MULTIPLE ===================== -->
@@ -364,63 +542,6 @@
                         </code></pre>
                         <aside class="notes">
                             zip je klasický nástroj. Jednoduchý a bezpečný.
-                        </aside>
-                        </section>
-
-                        <!-- ===================== WHILE ===================== -->
-                        <section>
-                        <h2>while cyklus</h2>
-                        <pre><code class="python" data-trim data-line-numbers>
-                        i = 0
-                        while i &lt; 5:
-                            print(i)
-                            i += 1
-                        </code></pre>
-                        <aside class="notes">
-                            Používat když neznáme počet iterací předem.
-                        </aside>
-                        </section>
-
-                        <!-- ===================== BREAK CONTINUE ===================== -->
-                        <section>
-                        <h2>break & continue</h2>
-                        <pre><code class="python" data-trim data-line-numbers>
-                        for x in data:
-                            if x == 0:
-                                continue
-                            if x &lt; 0:
-                                break
-                        </code></pre>
-                        <aside class="notes">
-                            break končí, continue přeskočí iteraci.
-                        </aside>
-                        </section>
-
-                        <!-- ===================== ELSE FOR ===================== -->
-                        <section>
-                        <h2>else u for/while</h2>
-                        <pre><code class="python" data-trim data-line-numbers>
-                        for x in nums:
-                            if x == 5:
-                                break
-                        else:
-                            print("nenalezeno")
-                        </code></pre>
-                        <aside class="notes">
-                            else se spustí jen pokud nebyl break. Často neznámá fíčura.
-                        </aside>
-                        </section>
-
-                        <!-- ===================== WALRUS ===================== -->
-                        <section>
-                        <h2>Walrus operátor :=</h2>
-                        <img class="fragment" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F31%2Fce%2Fc7%2F31cec721f6d70db0602068fbebc2ed61.jpg&f=1&nofb=1&ipt=b3267eae45eb713e9e198a709e6319d6a7c333a29da1dbe2c32c00e57f4259da" style="border-radius: 50%; max-width: 40%;">
-                        <pre class="fragment"><code class="python" data-trim data-line-numbers>
-                        while (line := file.readline()):
-                            print(line)
-                        </code></pre>
-                        <aside class="notes">
-                            Užitečné pro čtení streamů. Ale nepřehánět – čitelnost je důležitější.
                         </aside>
                         </section>
 
@@ -451,7 +572,12 @@
                             Užitečné pro testování, brute-force, matematiku.
                         </aside>
                         </section>
+                </section>
 
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
                         <!-- ===================== SUMMARY ===================== -->
                         <section data-background-gradient="linear-gradient(135deg,#0f3057,#1f1f1f)">
                         <h2>Shrnutí</h2>
