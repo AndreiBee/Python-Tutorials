@@ -99,13 +99,17 @@
                             if is_admin:
                                 print("Admin panel")
                         </code></pre>
-                        <p class="fragment">👉 raději zjednodušovat a používat <b>guard clauses</b></p>
-                        <pre class="fragment"><code class="python" data-trim data-line-numbers>
-                        if not user_logged and not is_admin:
-                            return
+                        <p class="fragment">👉 raději <u>zjednodušovat</u> a používat <b>guard clauses!!!</b></p>
 
-                        print("Admin panel")
-                        </code></pre>
+                        <div class="r-stack fragment">
+                            <img class="fragment fade-out" style="border-radius: 5%; max-width: 40%" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg.picturequotes.com%2F2%2F294%2F293718%2Fyou-shall-not-pass-quote-1.jpg&f=1&nofb=1&ipt=42936f4376ac2ed6ae801ee10da9be2ad6915e1a102f431a342fd15b2704f1ca">
+                            <pre class="fragment current-visible"><code class="python" data-trim data-line-numbers>
+                            if not user_logged and not is_admin:
+                                return
+
+                            print("Admin panel")
+                            </code></pre>
+                        </div>
                         <aside class="notes">
                             Moc vnoření = špatná čitelnost. Staré pravidlo: raději dříve vrátit.
                         </aside>
@@ -411,6 +415,35 @@
                         else:
                             print("i is no longer less than 6")
                         </code></pre>
+
+                        </section>
+                </section>
+
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
+                        <section>
+                        <h2>Příklad z praxe</h2>
+
+                        <div class="r-stack">
+                            <img class="fragment fade-out" style="max-width: 80%; border-radius: 5%;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fprogrammerhumor.io%2Fwp-content%2Fuploads%2F2021%2F05%2Fprogrammerhumor-io-debugging-memes-programming-memes-c41548e8de132ca.png&f=1&nofb=1&ipt=57cd01ff5efc3323673dcda1c2362fec8c2794301b26d0f8b98ac5d03f57ab1f">
+
+                            <pre><code class="python fragment currently-visible" data-trim data-line-numbers>
+                            import time
+
+                            print("Starting Windows Troubleshooter...")
+
+                            start_time = time.time()
+                            duration = 60  # jak dlouho budeme 'hledat problém' (v sekundách)
+
+                            while time.time() - start_time < duration:
+                                print("Searching for problems...")
+                                time.sleep(2)
+
+                            print("We didn't find any problems.")
+                            </code></pre>
+                        </div>
 
                         </section>
                 </section>
