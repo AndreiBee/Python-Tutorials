@@ -49,6 +49,13 @@
                     data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
 					data-background-transition="zoom"
 					>
+                        <section>
+                        <h1>OMM</h1>
+                        <h3>Datové typy v Pythonu</h3>
+                        <p class="fragment">bool • int • float • string</p>
+                        <p class="fragment">list • tuple • dict • set</p>
+                        </section>
+
                         <!-- ===================== TITLE ===================== -->
                         <section>
                         <h1 class="r-fit-text">Conditionals & Iteration</h1>
@@ -423,13 +430,76 @@
                     data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
 					data-background-transition="zoom"
 					>
+                    <section>
+                        <h2 class="r-fit-text">🔁 for vs while (životní realita)</h2>
+                        <p class="r-fit-text">Rozdíl mezi cykly si ukážeme na jednoduchém příkladu:</p>
+                        <p class="fragment"><strong>Chození do práce</strong></p>
+
+                        <aside class="notes">
+                            Řekni studentům, že cyklus není nic jiného než opakování nějaké činnosti.
+                            Každý den vstát a jít do práce je perfektní analogie.
+                            Teď ukážeme rozdíl mezi pevným počtem opakování (for) a podmínkou (while).
+                        </aside>
+                    </section>
+
+                    <section>
+                    <h3>👔 for – pracuji do 65 let</h3>
+
+                    <pre><code class="python fragment" data-trim data-line-numbers="1|2|4|5|7|">
+                        beginning_age = 20
+                        retirement_age = 65
+
+                        for age in range(beginning_age, retirement_age):
+                            print(f"Je mi {age} let a jdu do práce.")
+                            
+                        print("Odchod do důchodu 🎉")
+                    </code></pre>
+
+                    <aside class="notes">
+                        Tady je všechno jasně dané.
+                        Víme přesně kolikrát se cyklus provede.
+                        Má pevný začátek a pevný konec.
+                        To je typické použití for cyklu – když víme počet opakování.
+                    </aside>
+                    </section>
+
+                    <section>
+                        <h3>☠️ while – pracuji dokud žiju</h3>
+
+                        <pre><code class="python" data-trim data-line-numbers="1|2|4|5|6|8|9|11|">
+                            age = 20
+                            alive = True
+
+                            while alive:
+                                print(f"Je mi {age} let a jdu do práce.")
+                                age += 1
+                                
+                                if age == 100:
+                                    alive = False
+
+                            print("Konec života.")
+                        </code></pre>
+
+                        <aside class="notes">
+                            Tady nemáme pevný počet opakování.
+                            Cyklus běží dokud je splněná podmínka.
+                            Pokud podmínku nikdy nezměníme, máme nekonečný cyklus.
+                            While je o stavu, ne o počtu.
+                        </aside>
+                    </section>
+                </section>
+
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
                         <section>
                         <h2>Příklad z praxe</h2>
 
                         <div class="r-stack">
                             <img class="fragment fade-out" style="max-width: 80%; border-radius: 5%;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fprogrammerhumor.io%2Fwp-content%2Fuploads%2F2021%2F05%2Fprogrammerhumor-io-debugging-memes-programming-memes-c41548e8de132ca.png&f=1&nofb=1&ipt=57cd01ff5efc3323673dcda1c2362fec8c2794301b26d0f8b98ac5d03f57ab1f">
 
-                            <pre><code class="python fragment currently-visible" data-trim data-line-numbers>
+                            <pre><code class="python fragment currently-visible" data-trim data-line-numbers="1|3|5|6|8|9|10|12|">
                             import time
 
                             print("Starting Windows Troubleshooter...")
@@ -789,9 +859,48 @@
                     data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
 					data-background-transition="zoom"
 					>
+                        <section>
                         <h2>Domácí úkol</h2>
+                        <p class="fragment">Nainstalovat:</p>
+                        <ol>
+                            <li class="fragment"><strong><a href="https://adoptium.net/download?link=https%3A%2F%2Fgithub.com%2Fadoptium%2Ftemurin25-binaries%2Freleases%2Fdownload%2Fjdk-25.0.1%252B8%2FOpenJDK25U-jdk_x64_windows_hotspot_25.0.1_8.msi&vendor=Adoptium">Eclipse Adoptium JDK 25</a></strong></li>
+                            <li class="fragment"><strong><a href="https://notepad-plus-plus.org/downloads/images/nppDownload.png">Notepad++</a></strong></li>
+                        </ol>
+                        <p class="fragment">Vygenerovat unikátní obrázek se svým jménem.</p>
                         </section>
 	
+                        <section>
+                        <h2>Domácí úkol</h2>
+                        <img src="assets/plantuml_hw.png" style="border-radius: 5%; max-width: 50%;">
+                        </section>
+
+                        <section>
+                        <h2>📝 Postup odevzdání</h2>
+                        <ol class="r-fit-text">
+                            <li>Otevři záložku Discussions na GitHub</li>
+                            <li>Vyber kategorii <strong><a href="https://github.com/AndreiBee/Python-Tutorials/discussions/categories/03-homework-submissions">03 Homework Submissions</a></strong></li>
+                            <li>Klikni na zelené tlačítko New Discussion (vpravo nahoře)</li>
+                            <li>Název vlákna napiš ve formátu: Homework 03 – Jméno Příjmení</li>
+                        </ol>
+                        </section>
+
+                        <section>
+                        <h2 class="r-fit-text">📄 Co musí odevzdání obsahovat</h2>
+                        <h3>1️⃣PlantUML kód</h3>
+                        <p class="r-fit-text">Vlož svůj kompletní PlantUML kód přímo do příspěvku pomocí code blocku:
+<pre> ```<br>@startuml<br>Alice -> Bob: Ahoj<br>Bob --> Alice: Odpověď<br>@enduml<br>``` </pre>
+Kód musí být celý a spustitelný.</p>
+                        </section>
+
+                        <section>
+                        <h2 class="r-fit-text">📄 Co musí odevzdání obsahovat</h2>
+                        <h3>2️⃣Vygenerovaný obrázek</h3>
+                        <ul>
+                            <li>Vygeneruj obrázek PNG</li>
+                            <li>Přetáhni ho přímo do příspěvku (drag & drop)</li>
+                            <li>Obrázek musí odpovídat vloženému kódu</li>
+                        </ul>
+                        </section>
 				</section>
 
 				<div class="footer">
