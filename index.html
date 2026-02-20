@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>03_Conditionals and Iteration</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			.reveal .footer {
+				position: fixed;
+				bottom: 0%;
+				left: 2%;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				font-size: 0.4em;
+				color: #94a3b8; /* jemná šedá */
+
+				opacity: 0.85;
+				z-index: 20;
+			
+				pointer-events: auto;
+			}
+
+			.reveal .footer a {
+				pointer-events: auto;
+			}
+
+			.reveal .footer img {
+				height: 28px;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section 
+                    data-background-gradient="linear-gradient(135deg,#1f1f1f,#0f3057)"
+					data-background-transition="zoom"
+					>
+                        <section>
+
+                        <h2>Header</h2>
+
+                        <pre><code class="python" data-trim data-line-numbers>
+                        </code></pre>
+
+                        <aside class="notes">
+                        </aside>
+
+                        </section>
+
+                </section>
+
+				<div class="footer">
+					<span>Andrej Pčelovodov</span>
+					<a href="https://arvion.cz" target="_blank">
+						<img src="https://arvion.cz/img/svg/logo-opt.svg" alt="Logo">
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="node_modules/reveal.js-copycode/plugin/copycode/copycode.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+			Reveal.configure({ pdfMaxPagesPerSlide: 1 });
+		</script>
+	</body>
+</html>
