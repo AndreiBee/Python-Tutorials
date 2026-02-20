@@ -81,6 +81,10 @@ Na konci tohoto kurzu budete schopni:
 
 ##### Přednáška se uskutečnila `11.2.2026`.
 
-### [03. Conditionals and Iteration](03_Conditionals_and_Iteration/03_Conditionals_and_Iteration.pdf)
+### [03. Conditionals and Iteration⏭️](03_Conditionals_and_Iteration/03_Conditionals_and_Iteration.pdf)
 
 📂 Složka: `03_Conditionals_and_Iteration`
+
+### [04. Functions](04_Functions/04_Functions.pdf)
+
+📂 Složka: `04_Functions`
