@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>03_Conditionals and Iteration</title>
+		<title>04_Functions</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -122,6 +122,9 @@
 
                                 greet()
                             </code></pre>
+
+                            <p>Volání funkce bez parametrů</p>
+
                             <aside class="notes">
                                 Závorky jsou povinné.
                                 Bez nich jen odkazujeme na objekt funkce.
@@ -160,10 +163,26 @@
                         <section>
                             <h2>Implicitní návrat None</h2>
                             <pre><code class="language-python" data-trim data-line-numbers>
-                        def do_something():
-                            x = 5
+                                def do_something():
+                                    x = 5
+                                    # Tady funkce vráti defaultně None
 
-                        print(do_something())
+                                print(do_something())
+                            </code></pre>
+                            <aside class="notes">
+                                Studenti často nechápou, proč se vypíše None.
+                                Každá funkce v Pythonu vrací hodnotu.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Explicitní návrat None</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def do_something():
+                                    x = 5
+                                    return
+
+                                print(do_something())
                             </code></pre>
                             <aside class="notes">
                                 Studenti často nechápou, proč se vypíše None.
@@ -173,13 +192,14 @@
 
                         <section>
                             <h2>Výchozí (default) parametry</h2>
-                            <pre><code class="language-python" data-trim data-line-numbers>
-                        def power(base, exponent=2):
-                            return base ** exponent
+                            <pre><code class="language-python" data-trim data-line-numbers="1|4|5|">
+                                def power(base, exponent=2):
+                                    return base ** exponent
 
-                        print(power(3))
-                        print(power(3, 3))
+                                print(power(3))
+                                print(power(3, 3))
                             </code></pre>
+
                             <aside class="notes">
                                 Default parametry se vyhodnocují při definici funkce.
                                 To je důležité u mutable objektů.
@@ -188,14 +208,19 @@
 
                         <section>
                             <h2 class="r-fit-text">Pozor na mutable default argument</h2>
-                            <pre><code class="language-python" data-trim data-line-numbers>
+                            <pre><code class="language-python" data-trim data-line-numbers="1|">
                                 def add_item(item, items=[]):
                                     items.append(item)
                                     return items
 
-                                print(add_item("A"))
-                                print(add_item("B"))
+                                print(add_item("A")) # ['A']
+                                print(add_item("B")) # ['A', 'B']
                             </code></pre>
+
+                            <p class="fragment">
+                            Seznam je sdílený mezi voláními.<br>
+                            Správně by mělo být <strong>items=None</strong><br>a vytvořit nový seznam uvnitř.
+                            </p>
 
                             <aside class="notes">
                                 Toto je klasická past.
@@ -207,46 +232,48 @@
                         <section>
                             <h2>*args a **kwargs</h2>
                             <pre><code class="language-python" data-trim data-line-numbers>
-                        def print_all(*args):
-                            for arg in args:
-                                print(arg)
+                                def print_all(*args):
+                                    for arg in args:
+                                        print(arg)
 
-                        print_all(1, 2, 3)
+                                print_all(1, 2, 3)
                             </code></pre>
-                            <aside class="notes">
-                                *args = tuple
-                                **kwargs = dictionary
+
+                            <p class="fragment">
+                            *args = tuple<br>
+                            **kwargs = dictionary<br>
                                 Používá se u API, frameworků, flexibilních funkcí.
-                            </aside>
+                            </p>
                         </section>
 
                         <section>
                             <h2>Keyword argumenty</h2>
                             <pre><code class="language-python" data-trim data-line-numbers>
-                        def introduce(name, age):
-                            print(f"{name} is {age} years old")
+                                def introduce(name, age):
+                                    print(f"{name} is {age} years old")
 
-                        introduce(age=25, name="Eva")
+                                introduce(age=25, name="Eva")
                             </code></pre>
-                            <aside class="notes">
+                            <p class="fragment">
                                 Python umožňuje měnit pořadí pomocí pojmenovaných argumentů.
-                            </aside>
+                            </p>
                         </section>
 
                         <section>
                             <h2>Funkce jsou objekty</h2>
                             <pre><code class="language-python" data-trim data-line-numbers>
-                        def greet(name):
-                            return f"Hello {name}"
+                                def greet(name):
+                                    return f"Hello {name}"
 
-                        say_hello = greet
+                                say_hello = greet
 
-                        print(say_hello("World"))
+                                print(say_hello("World"))
                             </code></pre>
-                            <aside class="notes">
-                                Funkce jsou first-class objects.
+
+                            <p class="fragment">
+                            Funkce jsou <strong>first-class objects</strong><br>(použití objektu není nijak omezeno).<br>
                                 Můžeme je přiřazovat, předávat, vracet.
-                            </aside>
+                            </p>
                         </section>
 
                         <section>
@@ -273,10 +300,11 @@
 
                                 print(square(5))
                             </code></pre>
-                            <aside class="notes">
-                                Lambda je anonymní funkce.
+
+                            <p class="fragment">
+                            Lambda je <strong>anonymní funkce</strong>.<br>
                                 Používat střídmě – čitelnost je důležitější než zkratky.
-                            </aside>
+                            </p>
                         </section>
 
                         <section>
@@ -289,10 +317,13 @@
 
                                 print(factorial(5))
                             </code></pre>
-                            <aside class="notes">
-                                Rekurze musí mít ukončovací podmínku.
-                                Python má omezený recursion depth.
-                            </aside>
+
+                            <p class="fragment">
+                            Rekurze musí mít ukončovací podmínku!<br>
+                            Python má omezený recursion depth.<br>
+                            Hrozí nebezpečí stack overflow.<br>
+Lepší je to vidět jednou a hned zapomenout.
+                            </p>
                         </section>
 
                         <section>
