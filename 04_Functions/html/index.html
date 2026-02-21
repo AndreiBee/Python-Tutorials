@@ -51,14 +51,382 @@
 					>
                         <section>
 
-                        <h2>Header</h2>
+                            <h2>OMM</h2>
 
-                        <pre><code class="python" data-trim data-line-numbers>
-                        </code></pre>
+                            <p class="fragment">if💠 match</p>
+                            <p class="fragment">for 💠 while</p>
+                            <p class="fragment">itertools</p>
 
-                        <aside class="notes">
-                        </aside>
+                            <aside class="notes">
+                            </aside>
 
+                        </section>
+
+                        <section>
+                            <h1 class="r-fit-text">Functions</h1>
+                            <h3>Od základů až po pokročilé použití</h3>
+                            <aside class="notes">
+                                Dnes projdeme funkce opravdu důkladně.
+                                Nejen jak je napsat, ale proč existují, jak fungují pod kapotou
+                                a jak se používají v reálném světě.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Proč vůbec funkce?</h2>
+                            <ul>
+                                <li>Opakovatelnost kódu</li>
+                                <li>Čitelnost</li>
+                                <li>Oddělení odpovědnosti</li>
+                                <li>Testovatelnost</li>
+                            </ul>
+                            <aside class="notes">
+                                Bez funkcí by byl program jen dlouhý skript.
+                                Funkce jsou základní stavební kámen softwarového inženýrství.
+                                Už v C fungovaly stejně – Python na tom nic nemění.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Definice funkce</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers="1|2|3|4|">
+                                def function_name(parameters):
+                                    """Optional docstring""" # Accessible via .__doc__
+                                    # Function body
+                                    return [expression]
+                            </code></pre>
+                            <aside class="notes">
+                                Klíčové slovo def. Dvojte4ka
+                                Funkce se nespustí sama – musíme ji zavolat.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Definice funkce</h2>
+
+                            <ul class="r-fit-text">
+                                <li class="fragment"><strong>def</strong>: Toto klíčové slovo zahajuje definici funkce.</li>
+                                <li class="fragment"><strong>function_name</strong>: Název, který zvolíte pro funkci a který by měl popisovat její účel.</li>
+                                <li class="fragment"><strong>parameters</strong>: Volitelné vstupy, které funkce může přijmout, umístěné v závorkách.</li>
+                                <li class="fragment"><strong>dvojtečka (:)</strong>: Označuje začátek těla funkce.</li>
+                                <li class="fragment"><strong>docstring ("""Description""")</strong>: Řetězec, který popisuje, co funkce dělá, je volitelný, ale pro přehlednost se doporučuje.</li>
+                                <li class="fragment"><strong>return statement</strong>: Používá se k odeslání hodnoty zpět volajícímu. Pokud je vynechán, funkce vrátí <strong>None</strong>.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Volání funkce</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def greet():
+                                    print("Hello world")
+
+                                greet()
+                            </code></pre>
+                            <aside class="notes">
+                                Závorky jsou povinné.
+                                Bez nich jen odkazujeme na objekt funkce.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Parametry</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                        def greet(name):
+                            print(f"Hello {name}")
+
+                        greet("Andrej")
+                            </code></pre>
+                            <aside class="notes">
+                                Parametr je proměnná lokální pro danou funkci.
+                                Funkce jsou izolované – to je zásadní koncept.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Return hodnoty</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def add(a, b):
+                                    return a + b
+
+                                result = add(3, 4)
+                                print(result)
+                            </code></pre>
+                            <aside class="notes">
+                                return ukončí funkci.
+                                Bez return funkce vrací None.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Implicitní návrat None</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                        def do_something():
+                            x = 5
+
+                        print(do_something())
+                            </code></pre>
+                            <aside class="notes">
+                                Studenti často nechápou, proč se vypíše None.
+                                Každá funkce v Pythonu vrací hodnotu.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Výchozí (default) parametry</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                        def power(base, exponent=2):
+                            return base ** exponent
+
+                        print(power(3))
+                        print(power(3, 3))
+                            </code></pre>
+                            <aside class="notes">
+                                Default parametry se vyhodnocují při definici funkce.
+                                To je důležité u mutable objektů.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2 class="r-fit-text">Pozor na mutable default argument</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def add_item(item, items=[]):
+                                    items.append(item)
+                                    return items
+
+                                print(add_item("A"))
+                                print(add_item("B"))
+                            </code></pre>
+
+                            <aside class="notes">
+                                Toto je klasická past.
+                                Seznam je sdílený mezi voláními.
+                                Správně by mělo být items=None a vytvořit nový seznam uvnitř.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>*args a **kwargs</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                        def print_all(*args):
+                            for arg in args:
+                                print(arg)
+
+                        print_all(1, 2, 3)
+                            </code></pre>
+                            <aside class="notes">
+                                *args = tuple
+                                **kwargs = dictionary
+                                Používá se u API, frameworků, flexibilních funkcí.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Keyword argumenty</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                        def introduce(name, age):
+                            print(f"{name} is {age} years old")
+
+                        introduce(age=25, name="Eva")
+                            </code></pre>
+                            <aside class="notes">
+                                Python umožňuje měnit pořadí pomocí pojmenovaných argumentů.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Funkce jsou objekty</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                        def greet(name):
+                            return f"Hello {name}"
+
+                        say_hello = greet
+
+                        print(say_hello("World"))
+                            </code></pre>
+                            <aside class="notes">
+                                Funkce jsou first-class objects.
+                                Můžeme je přiřazovat, předávat, vracet.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Funkce jako argument</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def operate(func, x, y):
+                                    return func(x, y)
+
+                                def multiply(a, b):
+                                    return a * b
+
+                                print(operate(multiply, 3, 4))
+                            </code></pre>
+                            <aside class="notes">
+                                Tohle je základ higher-order functions.
+                                Bez toho by neexistoval map, filter atd.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Lambda funkce</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                square = lambda x: x * x
+
+                                print(square(5))
+                            </code></pre>
+                            <aside class="notes">
+                                Lambda je anonymní funkce.
+                                Používat střídmě – čitelnost je důležitější než zkratky.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Rekurze🚫</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def factorial(n):
+                                    if n == 1:
+                                        return 1
+                                    return n * factorial(n - 1)
+
+                                print(factorial(5))
+                            </code></pre>
+                            <aside class="notes">
+                                Rekurze musí mít ukončovací podmínku.
+                                Python má omezený recursion depth.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Scope (LEGB pravidlo)</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                x = 10
+
+                                def test():
+                                    x = 5
+                                    print(x)
+
+                                test()
+                                print(x)
+                            </code></pre>
+
+                            <p>Local, Enclosing, Global, Built-in.</p>
+
+                            <aside class="notes">
+                                Local, Enclosing, Global, Built-in.
+                                Studenti musí pochopit rozdíl mezi lokální a globální proměnnou.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Nested funkce</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def outer():
+                                    def inner():
+                                        print("Inside inner")
+                                    inner()
+
+                                outer()
+                            </code></pre>
+                            <aside class="notes">
+                                Funkce mohou být definované uvnitř jiných funkcí.
+                                Používá se u closures a dekorátorů.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Closure</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def make_multiplier(factor):
+                                    def multiply(x):
+                                        return x * factor
+                                    return multiply
+
+                                double = make_multiplier(2)
+                                print(double(5))
+                            </code></pre>
+                            <aside class="notes">
+                                Inner funkce si pamatuje okolní proměnné.
+                                To je velmi silný koncept.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Decorators</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def logger(func):
+                                    def wrapper(*args, **kwargs):
+                                        print("Calling function...")
+                                        return func(*args, **kwargs)
+                                    return wrapper
+
+                                @logger
+                                def say_hi():
+                                    print("Hi")
+
+                                say_hi()
+                            </code></pre>
+                            <aside class="notes">
+                                Dekorátory obalují funkce.
+                                Používají se v frameworkách (Flask, Django).
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Type hints</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def add(a: int, b: int) -> int:
+                                    return a + b
+                            </code></pre>
+                            <aside class="notes">
+                                Type hints nejsou povinné, ale profesionální kód je používá.
+                                Pomáhá IDE a static analyzérům.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Docstring</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def add(a: int, b: int) -> int:
+                                    """
+                                    Returns sum of two integers.
+                                    """
+                                    return a + b
+                            </code></pre>
+                            <aside class="notes">
+                                Dokumentace přímo v kódu.
+                                Důležité pro větší projekty.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Reálný příklad – validace uživatele</h2>
+                            <pre><code class="language-python" data-trim data-line-numbers>
+                                def is_valid_user(username: str) -> bool:
+                                    if len(username) < 3:
+                                        return False
+                                    if not username.isalnum():
+                                        return False
+                                    return True
+
+                                print(is_valid_user("andrej123"))
+                            </code></pre>
+                            <aside class="notes">
+                                Ukázka čisté, jednoduché, testovatelné funkce.
+                                Takhle má vypadat produkční kód.
+                            </aside>
+                        </section>
+
+                        <section>
+                            <h2>Shrnutí</h2>
+                            <ul>
+                                <li>Funkce jsou základ modularity</li>
+                                <li>Jsou objekty</li>
+                                <li>Podporují rekurzi, closures, dekorátory</li>
+                                <li>Bez nich není seriózní software</li>
+                            </ul>
+                            <aside class="notes">
+                                Pokud studenti pochopí funkce opravdu do hloubky,
+                                otevře se jim celý svět programování.
+                            </aside>
                         </section>
 
                 </section>
